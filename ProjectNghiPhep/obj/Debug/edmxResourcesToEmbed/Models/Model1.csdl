@@ -137,7 +137,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="nghiphepEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="NghiPhepEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ContractTypes" EntityType="Self.ContractType" />
     <EntitySet Name="Departments" EntityType="Self.Department" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />

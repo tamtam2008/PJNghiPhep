@@ -86,3 +86,6 @@ C:\Users\Tam\Desktop\ProjectNghiPhep\ProjectNghiPhep\bin\zh-Hant\System.Spatial.
 C:\Users\Tam\Desktop\ProjectNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csprojResolveAssemblyReference.cache
 C:\Users\Tam\Desktop\ProjectNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.dll
 C:\Users\Tam\Desktop\ProjectNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.pdb
+C:\Users\Tam\Desktop\ProjectNghiPhep\ProjectNghiPhep\bin\MVCGrid.dll
+C:\Users\Tam\Desktop\ProjectNghiPhep\ProjectNghiPhep\bin\WebActivatorEx.dll
+C:\Users\Tam\Desktop\ProjectNghiPhep\ProjectNghiPhep\bin\MVCGrid.xml

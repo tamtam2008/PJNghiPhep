@@ -21,6 +21,16 @@
     <Property Name="createdAt" Type="float" />
     <Property Name="managerId" Type="varchar" MaxLength="255" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'C:\USERS\TAM\DESKTOP\PROJECTNGHIPHEP\PROJECTNGHIPHEP\APP_DATA\NGHIPHEP.MDF.dbo.Document' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Document">
+          <Property Name="_id" Type="varchar" MaxLength="255" />
+          <Property Name="code" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="int" />
+          <Property Name="createdById" Type="varchar" MaxLength="255" />
+          <Property Name="createdAt" Type="float" />
+          <Property Name="verifiedById" Type="varchar" MaxLength="255" />
+        </EntityType>-->
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -77,6 +87,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <!--Errors Found During Generation:
+error 6004: The table 'C:\USERS\TAM\DESKTOP\PROJECTNGHIPHEP\PROJECTNGHIPHEP\APP_DATA\NGHIPHEP.MDF.dbo.Document' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Document__create__35BCFE0A" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'C:\USERS\TAM\DESKTOP\PROJECTNGHIPHEP\PROJECTNGHIPHEP\APP_DATA\NGHIPHEP.MDF.dbo.Document' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Document__verifi__36B12243" />-->
   <Association Name="FK__Users__contractI__24927208">
     <End Role="ContractType" Type="Self.ContractType" Multiplicity="0..1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
