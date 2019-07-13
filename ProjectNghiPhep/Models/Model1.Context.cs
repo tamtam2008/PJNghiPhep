@@ -13,10 +13,10 @@ namespace ProjectNghiPhep.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class nghiphepEntities : DbContext
+    public partial class nghiphepEntities1 : DbContext
     {
-        public nghiphepEntities()
-            : base("name=nghiphepEntities")
+        public nghiphepEntities1()
+            : base("name=nghiphepEntities1")
         {
         }
     
