@@ -18,9 +18,9 @@ namespace ProjectNghiPhep.Models
         {
             this.Departments = new HashSet<Department>();
             this.Departments1 = new HashSet<Department>();
-            this.Users1 = new HashSet<User>();
             this.Documents = new HashSet<Document>();
             this.Documents1 = new HashSet<Document>();
+            this.Users1 = new HashSet<User>();
         }
     
         public string C_id { get; set; }
@@ -37,10 +37,10 @@ namespace ProjectNghiPhep.Models
         public virtual ICollection<Department> Departments { get; set; }
         public virtual ICollection<Department> Departments1 { get; set; }
         public virtual Department Department { get; set; }
+        public virtual ICollection<Document> Documents { get; set; }
+        public virtual ICollection<Document> Documents1 { get; set; }
         public virtual Title Title { get; set; }
         public virtual ICollection<User> Users1 { get; set; }
         public virtual User User1 { get; set; }
-        public virtual ICollection<Document> Documents { get; set; }
-        public virtual ICollection<Document> Documents1 { get; set; }
     }
 }

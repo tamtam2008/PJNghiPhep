@@ -754,3 +754,9 @@ tr.pager td {
             margin: 0;
         }
 }
+
+.page_header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}

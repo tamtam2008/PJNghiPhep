@@ -1,0 +1,17 @@
+﻿@using MVCGrid.Web
+@{
+    ViewBag.Title = "DonNghiPhep";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page_header">
+    <h2>Đơn Nghỉ Phép</h2>
+    <button class="btn-primary">
+        @Html.ActionLink("Tạo mới", "CreateNew", "DonNghiPhep")
+    </button>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        @Html.MVCGrid("DonNghiPhepGrid")
+    </div>
+</div>

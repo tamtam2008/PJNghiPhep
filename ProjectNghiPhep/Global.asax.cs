@@ -17,7 +17,7 @@ namespace ProjectNghiPhep
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
+            //MVCGridConfig.RegisterGrids();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
