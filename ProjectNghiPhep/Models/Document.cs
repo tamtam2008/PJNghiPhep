@@ -16,14 +16,16 @@ namespace ProjectNghiPhep.Models
     {
         public string C_id { get; set; }
         public string code { get; set; }
-        public Nullable<int> status { get; set; }
+        public int status { get; set; }
         public string createdById { get; set; }
-        public Nullable<double> createdAt { get; set; }
+        public double createdAt { get; set; }
         public string verifiedById { get; set; }
+        public Nullable<double> startDate { get; set; }
+        public Nullable<double> endDate { get; set; }
+        public string reason { get; set; }
+        public Nullable<double> verifiedAt { get; set; }
     
-        public virtual User User { get; set; }
+        public virtual User createdBy { get; set; }
         public virtual User User1 { get; set; }
-        public User createdBy { get; set; }
-        public User verifiedBy { get; set; }
     }
 }

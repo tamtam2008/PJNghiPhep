@@ -24,18 +24,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Documents">
-      <EntityTypeMapping TypeName="nghiphepModel.Document">
-        <MappingFragment StoreEntitySet="Document">
-          <ScalarProperty Name="C_id" ColumnName="_id" />
-          <ScalarProperty Name="code" ColumnName="code" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="createdById" ColumnName="createdById" />
-          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
-          <ScalarProperty Name="verifiedById" ColumnName="verifiedById" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="nghiphepModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -68,6 +56,22 @@
           <ScalarProperty Name="departmentId" ColumnName="departmentId" />
           <ScalarProperty Name="contractId" ColumnName="contractId" />
           <ScalarProperty Name="dayOff" ColumnName="dayOff" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="nghiphepModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="verifiedAt" ColumnName="verifiedAt" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="verifiedById" ColumnName="verifiedById" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="createdById" ColumnName="createdById" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

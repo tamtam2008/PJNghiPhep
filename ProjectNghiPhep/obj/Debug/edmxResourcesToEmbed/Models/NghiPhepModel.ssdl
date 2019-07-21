@@ -26,11 +26,15 @@
       <PropertyRef Name="_id" />
     </Key>
     <Property Name="_id" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="code" Type="varchar" MaxLength="255" />
-    <Property Name="status" Type="int" />
-    <Property Name="createdById" Type="varchar" MaxLength="255" />
-    <Property Name="createdAt" Type="float" />
+    <Property Name="code" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
+    <Property Name="createdById" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="createdAt" Type="float" Nullable="false" />
     <Property Name="verifiedById" Type="varchar" MaxLength="255" />
+    <Property Name="startDate" Type="float" />
+    <Property Name="endDate" Type="float" />
+    <Property Name="reason" Type="varchar" MaxLength="255" />
+    <Property Name="verifiedAt" Type="float" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -88,8 +92,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Document__create__35BCFE0A">
-    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+  <Association Name="FK__Document__create__5AEE82B9">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="Document" Type="Self.Document" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -175,7 +179,7 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Department" EntitySet="Department" />
     </AssociationSet>
-    <AssociationSet Name="FK__Document__create__35BCFE0A" Association="Self.FK__Document__create__35BCFE0A">
+    <AssociationSet Name="FK__Document__create__5AEE82B9" Association="Self.FK__Document__create__5AEE82B9">
       <End Role="Users" EntitySet="Users" />
       <End Role="Document" EntitySet="Document" />
     </AssociationSet>

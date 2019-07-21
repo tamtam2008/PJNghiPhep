@@ -228,6 +228,7 @@
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>NghiPhepModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TaoDonNghiPhep.cs" />
     <Compile Include="Models\Title.cs">
       <DependentUpon>NghiPhepModel.tt</DependentUpon>
     </Compile>
