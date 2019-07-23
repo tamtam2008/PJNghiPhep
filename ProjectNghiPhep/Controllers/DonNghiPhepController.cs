@@ -102,6 +102,12 @@ namespace ProjectNghiPhep.Controllers
                 result.status = 99;
                 db.SaveChanges();
             }
+            var user = db.Users.SingleOrDefault(b => b.C_id == result.createdById);
+            if (user != null)
+            {
+                user.dayOff = user.dayOff - (int)((result.endDate - result.startDate) / 1000 / 3600 / 24);
+                db.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
 

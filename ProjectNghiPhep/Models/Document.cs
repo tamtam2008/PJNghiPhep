@@ -26,6 +26,6 @@ namespace ProjectNghiPhep.Models
         public Nullable<double> verifiedAt { get; set; }
     
         public virtual User createdBy { get; set; }
-        public virtual User User1 { get; set; }
+        public virtual User verifiedBy { get; set; }
     }
 }

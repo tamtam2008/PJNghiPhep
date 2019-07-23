@@ -44,21 +44,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="nghiphepModel.User">
-        <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="C_id" ColumnName="_id" />
-          <ScalarProperty Name="username" ColumnName="username" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="createdById" ColumnName="createdById" />
-          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
-          <ScalarProperty Name="titleId" ColumnName="titleId" />
-          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
-          <ScalarProperty Name="contractId" ColumnName="contractId" />
-          <ScalarProperty Name="dayOff" ColumnName="dayOff" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Documents">
       <EntityTypeMapping TypeName="nghiphepModel.Document">
         <MappingFragment StoreEntitySet="Document">
@@ -71,6 +56,21 @@
           <ScalarProperty Name="createdById" ColumnName="createdById" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="nghiphepModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="dayOff" ColumnName="dayOff" />
+          <ScalarProperty Name="contractId" ColumnName="contractId" />
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="titleId" ColumnName="titleId" />
+          <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+          <ScalarProperty Name="createdById" ColumnName="createdById" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="C_id" ColumnName="_id" />
         </MappingFragment>
       </EntityTypeMapping>

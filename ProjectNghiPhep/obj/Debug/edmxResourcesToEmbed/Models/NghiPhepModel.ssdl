@@ -59,8 +59,8 @@
       <PropertyRef Name="_id" />
     </Key>
     <Property Name="_id" Type="varchar" MaxLength="255" Nullable="false" />
-    <Property Name="username" Type="varchar" MaxLength="255" />
-    <Property Name="status" Type="int" />
+    <Property Name="username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="createdById" Type="varchar" MaxLength="255" />
     <Property Name="createdAt" Type="float" />
     <Property Name="titleId" Type="varchar" MaxLength="255" />
