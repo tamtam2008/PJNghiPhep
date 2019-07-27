@@ -123,6 +123,13 @@
     <NavigationProperty Name="Title" Relationship="nghiphepModel.FK__Users__titleId__239E4DCF" FromRole="User" ToRole="Title" />
     <NavigationProperty Name="Users1" Relationship="nghiphepModel.FK__Users__dayOff__22AA2996" FromRole="User" ToRole="User1" />
     <NavigationProperty Name="User1" Relationship="nghiphepModel.FK__Users__dayOff__22AA2996" FromRole="User1" ToRole="User" />
+    <Property Name="fullName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="dateOfBirth" Type="Double" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
   </EntityType>
   <Association Name="FK__Users__contractI__24927208">
     <End Type="nghiphepModel.ContractType" Role="ContractType" Multiplicity="0..1" />

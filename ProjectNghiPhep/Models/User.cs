@@ -32,6 +32,13 @@ namespace ProjectNghiPhep.Models
         public string departmentId { get; set; }
         public string contractId { get; set; }
         public Nullable<int> dayOff { get; set; }
+        public string fullName { get; set; }
+        public string address { get; set; }
+        public string gender { get; set; }
+        public string password { get; set; }
+        public Nullable<double> dateOfBirth { get; set; }
+        public string email { get; set; }
+        public string mobile { get; set; }
     
         public virtual ContractType ContractType { get; set; }
         public virtual ICollection<Department> Departments { get; set; }

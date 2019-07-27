@@ -193,10 +193,10 @@
     <Compile Include="App_Start\MVCGridConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Controllers\DonNghiPhepController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RegistersController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -226,10 +226,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NghiPhepModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\NHANVIEN.cs" />
+    <Compile Include="Models\ShowDataBaseForPhanQuyen.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>NghiPhepModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TaoDonNghiPhep.cs" />
+    <Compile Include="Models\tbl_permision.cs" />
+    <Compile Include="Models\tbl_permision_detail.cs" />
+    <Compile Include="Models\tbl_per_relationship.cs" />
     <Compile Include="Models\Title.cs">
       <DependentUpon>NghiPhepModel.tt</DependentUpon>
     </Compile>
@@ -409,9 +414,23 @@
     <Content Include="Views\DonNghiPhep\CreateNew.cshtml" />
     <Content Include="Views\NguoiDung\Edit.cshtml" />
     <Content Include="Views\NguoiDung\Index.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <None Include="Views\Home\About.cshtml" />
     <None Include="Views\Home\Contact.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\PhanQuyens\ShowDataBasePhanQuyen.cshtml" />
+    <Content Include="Views\Registers\Edit.cshtml" />
+    <Content Include="Views\Registers\PhanQuyen.cshtml" />
+    <Content Include="Views\Registers\SetDataInDatabase.cshtml" />
+    <Content Include="Views\Registers\ShowDataBaseForUser.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\_LoginPartial.cshtml" />

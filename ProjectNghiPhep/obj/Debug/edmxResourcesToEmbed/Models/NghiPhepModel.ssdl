@@ -67,6 +67,13 @@
     <Property Name="departmentId" Type="varchar" MaxLength="255" />
     <Property Name="contractId" Type="varchar" MaxLength="255" />
     <Property Name="dayOff" Type="int" />
+    <Property Name="fullName" Type="nvarchar" MaxLength="255" />
+    <Property Name="address" Type="nvarchar" MaxLength="255" />
+    <Property Name="gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="password" Type="nchar" MaxLength="10" />
+    <Property Name="dateOfBirth" Type="float" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nchar" MaxLength="15" />
   </EntityType>
   <Association Name="FK__Departmen__creat__2B3F6F97">
     <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
