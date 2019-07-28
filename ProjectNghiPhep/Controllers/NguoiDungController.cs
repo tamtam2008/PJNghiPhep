@@ -36,6 +36,7 @@ namespace ProjectNghiPhep.Controllers
                              C_id = user.C_id,
                              username = user.username,
                              dayOff = user.dayOff,
+                             contractId = user.contractId,
                              createdAt = user.createdAt,
                              ContractType = contract
                          });
@@ -45,8 +46,26 @@ namespace ProjectNghiPhep.Controllers
                 username = r.username,
                 dayOff = r.dayOff,
                 createdAt = r.createdAt,
+                contractId = r.ContractType.name,
                 ContractType = r.ContractType
             }).ToList()[0];
+
+            var contract_query = (from contract in db.ContractTypes
+                         select new
+                         {
+                             C_id = contract.C_id,
+                             code = contract.code,
+                             name = contract.name,
+                             dayOff = contract.dayOff
+                         });
+            var contracts = contract_query.ToList().Select(c => new ContractType
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name,
+                dayOff = c.dayOff
+            }).ToList();
+            ViewData["contracts"] = contracts; 
             return View(user_result);
         }
 
