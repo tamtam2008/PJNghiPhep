@@ -72,6 +72,13 @@
           <Property Name="departmentId" Type="varchar" MaxLength="255" />
           <Property Name="contractId" Type="varchar" MaxLength="255" />
           <Property Name="dayOff" Type="int" />
+          <Property Name="fullName" Type="nvarchar" MaxLength="255" />
+          <Property Name="address" Type="nvarchar" MaxLength="255" />
+          <Property Name="gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="password" Type="nchar" MaxLength="10" />
+          <Property Name="dateOfBirth" Type="float" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="mobile" Type="nchar" MaxLength="15" />
         </EntityType>
         <Association Name="FK__Departmen__creat__2B3F6F97">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
@@ -336,6 +343,13 @@
           <NavigationProperty Name="Title" Relationship="nghiphepModel.FK__Users__titleId__239E4DCF" FromRole="User" ToRole="Title" />
           <NavigationProperty Name="Users1" Relationship="nghiphepModel.FK__Users__dayOff__22AA2996" FromRole="User" ToRole="User1" />
           <NavigationProperty Name="User1" Relationship="nghiphepModel.FK__Users__dayOff__22AA2996" FromRole="User1" ToRole="User" />
+          <Property Name="fullName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="dateOfBirth" Type="Double" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mobile" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
         </EntityType>
         <Association Name="FK__Users__contractI__24927208">
           <End Type="nghiphepModel.ContractType" Role="ContractType" Multiplicity="0..1" />
@@ -501,6 +515,13 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="nghiphepModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="fullName" ColumnName="fullName" />
                 <ScalarProperty Name="dayOff" ColumnName="dayOff" />
                 <ScalarProperty Name="contractId" ColumnName="contractId" />
                 <ScalarProperty Name="departmentId" ColumnName="departmentId" />

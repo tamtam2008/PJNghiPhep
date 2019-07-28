@@ -63,6 +63,13 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="nghiphepModel.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
           <ScalarProperty Name="dayOff" ColumnName="dayOff" />
           <ScalarProperty Name="contractId" ColumnName="contractId" />
           <ScalarProperty Name="departmentId" ColumnName="departmentId" />

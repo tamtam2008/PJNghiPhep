@@ -1,4 +1,5 @@
-﻿@using MVCGrid.Web
+﻿@model ProjectNghiPhep.Models.User
+@using MVCGrid.Web
 @{
     ViewBag.Title = "DonNghiPhep";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -22,6 +23,16 @@
                 $('#cancelTab').hide();
                 $(tabName + 'Tab').show();
                 $(tabName).addClass('active');
+            }
+            if (!window.localStorage.getItem('title')) {
+                window.localStorage.setItem('title', '@Model.Title.code');
+                window.localStorage.setItem('username', '@Model.username');
+            } else {
+                var title = window.localStorage.getItem('title')
+                if (title !== 'GIAMDOC') {
+                    $('.btn-verify').hide()
+                    $('.btn-cancel').hide()
+                }
             }
         </script>
         <ul class="nav nav-tabs">
