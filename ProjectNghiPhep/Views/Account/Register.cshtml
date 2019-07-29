@@ -1,36 +1,67 @@
-﻿@model ProjectNghiPhep.Models.RegisterModel
+﻿@model ProjectNghiPhep.Models.NHANVIEN
 @{
     ViewBag.Title = "Register";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Create a new account.</h2>
-</hgroup>
+<section id="loginForm">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
-
-    <fieldset>
-        <legend>Registration Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword)
-            </li>
-        </ol>
-        <input type="submit" value="Register" />
-    </fieldset>
-}
+        <div class="form-horizontal">
+            <h4>Đăng kí</h4>
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(m => m.username, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.username)
+                    @Html.ValidationMessageFor(m => m.username)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.password)
+                    @Html.ValidationMessageFor(m => m.password)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.email)
+                    @Html.ValidationMessageFor(m => m.email)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.gender)
+                    @Html.ValidationMessageFor(m => m.gender)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.address, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.address)
+                    @Html.ValidationMessageFor(m => m.address)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.mobile)
+                    @Html.ValidationMessageFor(m => m.mobile)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Log in" />
+                </div>
+            </div>
+        </div>
+    }
+</section>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

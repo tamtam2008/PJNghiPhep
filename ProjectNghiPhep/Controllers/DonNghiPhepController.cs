@@ -12,7 +12,7 @@ namespace ProjectNghiPhep.Controllers
         //
         // GET: /DonNghiPhep/
            
-        public ActionResult Index(string id)
+        public ActionResult Manager(string id)
         {
             if (id != null)
             {
@@ -38,6 +38,42 @@ namespace ProjectNghiPhep.Controllers
             else
             {
                 return View(new User() {
+                    username = "default",
+                    Title = new Title()
+                    {
+                        name = "Default"
+                    }
+                });
+            }
+        }
+
+        public ActionResult Employee(string id)
+        {
+            if (id != null)
+            {
+                NghiphepEntities db = new NghiphepEntities();
+                var query = (from user in db.Users
+                             join title in db.Titles
+                             on user.titleId equals title.C_id
+                             where user.C_id == id
+                             select new
+                             {
+                                 C_id = user.C_id,
+                                 title = title,
+                                 username = user.username
+                             });
+                var users = query.ToList().Select(r => new User
+                {
+                    C_id = r.C_id,
+                    Title = r.title,
+                    username = r.username
+                }).ToList();
+                return View(users[0]);
+            }
+            else
+            {
+                return View(new User()
+                {
                     username = "default",
                     Title = new Title()
                     {

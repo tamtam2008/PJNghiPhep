@@ -26,69 +26,46 @@ namespace ProjectNghiPhep.Controllers
             System.Diagnostics.Debug.WriteLine("Password ", model.Password);
             NghiphepEntities db = new NghiphepEntities();
             var query = (from user in db.Users
+                         join title in db.Titles
+                         on user.titleId equals title.C_id
                          where user.username == model.UserName && user.password == model.Password && user.isActive == true
                          select new
                          {
                              C_id = user.C_id,
+                             title = title,
                              username = user.username
                          });
             var users = query.ToList().Select(r => new User
             {
                 C_id = r.C_id,
+                Title = r.title,
                 username = r.username
             }).ToList();
-            System.Diagnostics.Debug.WriteLine("user ", users[0].username);
-            // If we got this far, something failed, redisplay form
-            return RedirectToAction("Index/" + users[0].C_id, "DonNghiPhep");
+            if (users.Count > 0)
+            {
+                // If we got this far, something failed, redisplay form
+                if (users[0].Title.code == "GIAMDOC")
+                {
+                    return RedirectToAction("Manager/" + users[0].C_id, "DonNghiPhep");
+                }
+                else
+                {
+                    return RedirectToAction("Employee/" + users[0].C_id, "DonNghiPhep");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+
+        [AllowAnonymous]
+        public ActionResult Register()
+        {
+            return View();
         }
 
     //    //
-    //    // POST: /Account/LogOff
-
-    //    [HttpPost]
-    //    [ValidateAntiForgeryToken]
-    //    public ActionResult LogOff()
-    //    {
-    //        WebSecurity.Logout();
-
-    //        return RedirectToAction("Index", "Home");
-    //    }
-
-    //    //
-    //    // GET: /Account/Register
-
-    //    [AllowAnonymous]
-    //    public ActionResult Register()
-    //    {
-    //        return View();
-    //    }
-
-    //    //
-    //    // POST: /Account/Register
-
-    //    [HttpPost]
-    //    [AllowAnonymous]
-    //    [ValidateAntiForgeryToken]
-    //    public ActionResult Register(RegisterModel model)
-    //    {
-    //        if (ModelState.IsValid)
-    //        {
-    //            // Attempt to register the user
-    //            try
-    //            {
-    //                WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-    //                WebSecurity.Login(model.UserName, model.Password);
-    //                return RedirectToAction("Index", "Home");
-    //            }
-    //            catch (MembershipCreateUserException e)
-    //            {
-    //                ModelState.AddModelError("", ErrorCodeToString(e.StatusCode));
-    //            }
-    //        }
-
-    //        // If we got this far, something failed, redisplay form
-    //        return View(model);
-    //    }
 
     //    //
     //    // POST: /Account/Disassociate

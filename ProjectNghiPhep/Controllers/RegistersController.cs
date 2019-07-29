@@ -25,14 +25,14 @@ namespace ProjectNghiPhep.Controllers
         public ActionResult SetDataInDataBase(NHANVIEN model)
         {
             User tbl = new User();
-            tbl.fullName = model.TenNV;
-            tbl.gender = model.GioiTinh;
+            tbl.fullName = model.fullName;
+            tbl.gender = model.gender;
             tbl.dateOfBirth = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000;
-            tbl.address = model.DiaChi;
-            tbl.email = model.Email;
-            tbl.mobile = model.SDT;
-            tbl.username = model.user_name;
-            tbl.password = model.pass;
+            tbl.address = model.address;
+            tbl.email = model.email;
+            tbl.mobile = model.mobile;
+            tbl.username = model.username;
+            tbl.password = model.password;
             //tbl.chucvu = "";
 
             db.Users.Add(tbl);
