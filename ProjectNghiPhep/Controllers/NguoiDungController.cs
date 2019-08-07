@@ -38,16 +38,22 @@ namespace ProjectNghiPhep.Controllers
                              dayOff = user.dayOff,
                              contractId = user.contractId,
                              createdAt = user.createdAt,
-                             ContractType = contract
+                             ContractType = contract,
+                             fullName = user.fullName,
+                             email = user.email,
+                             mobile = user.mobile
                          });
             var user_result = query.ToList().Select(r => new User
             {
                 C_id = r.C_id,
                 username = r.username,
+                fullName = r.fullName,
                 dayOff = r.dayOff,
                 createdAt = r.createdAt,
                 contractId = r.ContractType.name,
-                ContractType = r.ContractType
+                ContractType = r.ContractType,
+                email = r.email,
+                mobile = r.mobile
             }).ToList()[0];
 
             var contract_query = (from contract in db.ContractTypes

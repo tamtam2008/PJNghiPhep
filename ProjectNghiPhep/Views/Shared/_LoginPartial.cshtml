@@ -16,10 +16,10 @@
     })
 </script>
 <div style="display: flexbox; justify-content: flex-start; flex-direction: row;">
-    <text id="username_info" style="margin-top: 5px; font-weight: bold;">
-    </text>
+    <button class="btn btn-link" id="username_info" style="font-weight: bold;" onclick="window.location.replace('/NguoiDung/Edit/' + localStorage.getItem('token'));">
+    </button>
     &nbsp;
-    <button style="margin-top: -4px;" id="logout_button" class="btn btn-default" onclick="window.localStorage.clear(); window.location.replace('/Account/Login');">
+    <button id="logout_button" class="btn btn-default" onclick="window.localStorage.clear(); window.location.replace('/Account/Login');">
         Đăng xuất
     </button>
 </div>
