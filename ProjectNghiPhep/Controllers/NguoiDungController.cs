@@ -90,14 +90,14 @@ namespace ProjectNghiPhep.Controllers
         public ActionResult SaveUser (User user)
         {
             NghiphepEntities db = new NghiphepEntities();
-            var result = db.Users.SingleOrDefault(b => b.C_id == user.C_id);
+            var result = db.Users.SingleOrDefault(b => b.username == user.username);
             if (result != null)
             {
                 result.username = user.username;
                 result.fullName = user.fullName;
                 result.email = user.email;
                 result.mobile = user.mobile;
-                result.contractId = user.contractId;
+                //result.contractId = user.contractId;
                 result.dayOff = user.dayOff;
                 db.SaveChanges();
             }

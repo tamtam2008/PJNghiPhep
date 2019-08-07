@@ -148,7 +148,7 @@ namespace ProjectNghiPhep.Controllers
             {
                 NghiphepEntities db = new NghiphepEntities();
                 Document document = queryDocument();
-                string code = CreateAutoCode(document.code);
+                string code = CreateAutoCode(document != null ? document.code : null);
                 db.Documents.Add(new Document()
                 {
                     C_id = code,
@@ -205,7 +205,7 @@ namespace ProjectNghiPhep.Controllers
                 createdAt = r.createdAt
             }).ToList();
             documents.Reverse();
-            return documents[0];
+            return documents.Count > 0 ? documents[0] : null;
         }
 
         [HttpGet]
