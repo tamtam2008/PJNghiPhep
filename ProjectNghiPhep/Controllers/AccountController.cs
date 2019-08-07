@@ -62,6 +62,23 @@ namespace ProjectNghiPhep.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            NghiphepEntities db = new NghiphepEntities();
+            var contract_query = (from contract in db.ContractTypes
+                                  select new
+                                  {
+                                      C_id = contract.C_id,
+                                      code = contract.code,
+                                      name = contract.name,
+                                      dayOff = contract.dayOff
+                                  });
+            var contracts = contract_query.ToList().Select(c => new ContractType
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name,
+                dayOff = c.dayOff
+            }).ToList();
+            ViewData["contracts"] = contracts;
             return View();
         }
 

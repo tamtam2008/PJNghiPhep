@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProjectNghiPhep.Models;
+using System.Data.Entity.Validation;
 
 namespace ProjectNghiPhep.Controllers
 {
@@ -88,6 +89,38 @@ namespace ProjectNghiPhep.Controllers
             return View();
         }
 
+        public ActionResult ViewDocument (string id)
+        {
+            NghiphepEntities db = new NghiphepEntities();
+            var query = (from doc in db.Documents
+                         join user in db.Users
+                         on doc.createdById equals user.C_id
+                         where doc.C_id == id
+                         select new
+                         {
+                             C_id = doc.C_id,
+                             createdBy = user,
+                             code = doc.code,
+                             status = doc.status,
+                             createdAt = doc.createdAt,
+                             startDate = doc.startDate,
+                             endDate = doc.endDate
+                         }).OrderBy(x => x.code);
+            var documents = query.ToList().Select(r => new Document
+            {
+                C_id = r.C_id,
+                createdBy = r.createdBy,
+                code = r.code,
+                status = r.status,
+                createdAt = r.createdAt,
+                startDateString = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(r.startDate) / 1000d)).ToLocalTime().ToString(),
+                endDateString = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(r.endDate) / 1000d)).ToLocalTime().ToString(),
+                count = (int)((r.endDate - r.startDate) / 1000 / 3600 / 24) == 0 ? "1 ngày" : ((int)((r.endDate - r.startDate) / 1000 / 3600 / 24)).ToString() + " ngày"
+            }).ToList();
+            documents.Reverse();
+            return View(documents[0]);
+        }
+
         private string CreateAutoCode(string currentCode)
         {
             if (currentCode != null)
@@ -124,9 +157,24 @@ namespace ProjectNghiPhep.Controllers
                     endDate = (float)(DateTime.ParseExact(dnp.dateEnd, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
                     createdById = "USER_002"
                 });
+                //try
+                //{
                 db.SaveChanges();
+                //}
+                //catch (DbEntityValidationException e)
+                //{
+                //    foreach (var eve in e.EntityValidationErrors)
+                //    {
+                //        System.Diagnostics.Debug.WriteLine(eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                //        foreach (var ve in eve.ValidationErrors)
+                //        {
+                //            System.Diagnostics.Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                //                ve.PropertyName, ve.ErrorMessage);
+                //        }
+                //    }
+                //}
                 //write code to update student 
-                return RedirectToAction("Index");
+                return RedirectToAction("Employee");
             }
             return RedirectToAction("CreateNew");
         }
@@ -174,7 +222,7 @@ namespace ProjectNghiPhep.Controllers
                 user.dayOff = user.dayOff - (int)((result.endDate - result.startDate) / 1000 / 3600 / 24);
                 db.SaveChanges();
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Manager");
         }
 
         [HttpGet]
@@ -188,7 +236,7 @@ namespace ProjectNghiPhep.Controllers
                 result.status = 100;
                 db.SaveChanges();
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Manager");
         }
 
     }

@@ -45,6 +45,8 @@ namespace ProjectNghiPhep.Models
         [Required(ErrorMessage = "Trường này là bắt buộc")]
         [Display(Name = "Số ngày phép")]
         public Nullable<int> dayOff { get; set; }
+        [Required(ErrorMessage = "Trường này là bắt buộc")]
+        [Display(Name = "Tên nhân viên")]
         public string fullName { get; set; }
         public string address { get; set; }
         public string gender { get; set; }

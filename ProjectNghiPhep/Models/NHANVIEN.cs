@@ -31,6 +31,9 @@ namespace ProjectNghiPhep.Models
         public Nullable<System.DateTime> dateOfBirth { get; set; }
         public string chucvu { get; set; }
         [Required(ErrorMessage = "Trường này là bắt buộc")]
+        [Display(Name = "Loại hợp đồng")]
+        public string contractId { get; set; }
+        [Required(ErrorMessage = "Trường này là bắt buộc")]
         [Display(Name = "Mã nhân viên")]
         public string username { get; set; }
         [Required(ErrorMessage = "Trường này là bắt buộc")]

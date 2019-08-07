@@ -350,6 +350,7 @@
     <Content Include="Models\NghiPhepModel.edmx.diagram">
       <DependentUpon>NghiPhepModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\ProjectNghiPhep.pubxml" />
     <None Include="Scripts\jquery-3.0.0.intellisense.js" />
     <Content Include="Scripts\index.d.ts" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -425,6 +426,7 @@
     <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Views\DonNghiPhep\Employee.cshtml" />
+    <Content Include="Views\DonNghiPhep\ViewDocument.cshtml" />
     <None Include="Views\Home\About.cshtml" />
     <None Include="Views\Home\Contact.cshtml" />
     <None Include="Views\Home\Index.cshtml" />

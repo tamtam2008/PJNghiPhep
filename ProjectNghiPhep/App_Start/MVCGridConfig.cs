@@ -81,6 +81,11 @@ namespace ProjectNghiPhep
                         .WithHtmlEncoding(false)
                         .WithValueExpression((p, c) => c.UrlHelper.Action("CancelDocument", "DonNghiPhep", new { id = p.C_id }))
                         .WithValueTemplate("<a href='{Value}' class='btn btn-danger btn-cancel'>Hủy</a>");
+                    cols.Add("DetailBtn").WithSorting(false)
+                        .WithHeaderText("")
+                        .WithHtmlEncoding(false)
+                        .WithValueExpression((p, c) => c.UrlHelper.Action("ViewDocument", "DonNghiPhep", new { id = p.C_id }))
+                        .WithValueTemplate("<a href='{Value}' class='btn btn-primary'>Chi tiết</a>");
                 })
                 .WithRetrieveDataMethod((context) =>
                 {
@@ -190,6 +195,11 @@ namespace ProjectNghiPhep
                                  return count.ToString() + " ngày";
                              }
                          });
+                    cols.Add("DetailBtn").WithSorting(false)
+                        .WithHeaderText("")
+                        .WithHtmlEncoding(false)
+                        .WithValueExpression((p, c) => c.UrlHelper.Action("ViewDocument", "DonNghiPhep", new { id = p.C_id }))
+                        .WithValueTemplate("<a href='{Value}' class='btn btn-primary'>Chi tiết</a>");
                 })
                 .WithRetrieveDataMethod((context) =>
                 {
@@ -408,6 +418,11 @@ namespace ProjectNghiPhep
                                  return count.ToString() + " ngày";
                              }
                          });
+                    cols.Add("DetailBtn").WithSorting(false)
+                        .WithHeaderText("")
+                        .WithHtmlEncoding(false)
+                        .WithValueExpression((p, c) => c.UrlHelper.Action("ViewDocument", "DonNghiPhep", new { id = p.C_id }))
+                        .WithValueTemplate("<a href='{Value}' class='btn btn-primary'>Chi tiết</a>");
                 })
                 .WithRetrieveDataMethod((context) =>
                 {
@@ -517,6 +532,11 @@ namespace ProjectNghiPhep
                                  return count.ToString() + " ngày";
                              }
                          });
+                    cols.Add("DetailBtn").WithSorting(false)
+                        .WithHeaderText("")
+                        .WithHtmlEncoding(false)
+                        .WithValueExpression((p, c) => c.UrlHelper.Action("ViewDocument", "DonNghiPhep", new { id = p.C_id }))
+                        .WithValueTemplate("<a href='{Value}' class='btn btn-primary'>Chi tiết</a>");
                 })
                 .WithRetrieveDataMethod((context) =>
                 {
@@ -626,6 +646,11 @@ namespace ProjectNghiPhep
                                  return count.ToString() + " ngày";
                              }
                          });
+                    cols.Add("DetailBtn").WithSorting(false)
+                        .WithHeaderText("")
+                        .WithHtmlEncoding(false)
+                        .WithValueExpression((p, c) => c.UrlHelper.Action("ViewDocument", "DonNghiPhep", new { id = p.C_id }))
+                        .WithValueTemplate("<a href='{Value}' class='btn btn-primary'>Chi tiết</a>");
                 })
                 .WithRetrieveDataMethod((context) =>
                 {
