@@ -1,14 +1,28 @@
-﻿@if (Request.IsAuthenticated) {
-    <text>
-        Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
-        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
-            @Html.AntiForgeryToken()
-            <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+﻿<script>
+    $(document).ready(function linkTo() {
+        console.log('link to link to')
+        var token = localStorage.getItem('token');
+        var username = localStorage.getItem('username');
+        if (token) {
+            $('#username_info').show();
+            $('#login_button').hide();
+            $('#username_info').first().text('Hello ' + username);
+            $("logout_button").show();
+        } else {
+            $('#username_info').hide();
+            $('#login_button').show();
+            $("logout_button").hide();
         }
+    })
+</script>
+<div style="display: flexbox; justify-content: flex-start; flex-direction: row;">
+    <text id="username_info" style="margin-top: 5px;">
     </text>
-} else {
-    <ul>
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
-}
+    <button id="logout_button" class="btn btn-default">
+        Đăng xuất
+    </button>
+</div>
+<ul id="login_button">
+    <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+</ul>

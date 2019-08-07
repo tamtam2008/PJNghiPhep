@@ -122,10 +122,10 @@ namespace ProjectNghiPhep
                                     }).ToList();
                      //System.Diagnostics.Debug.WriteLine(options.GetLimitRowcount().Value);
                      int count = 0;
-                     if (options.GetLimitOffset().HasValue)
-                     {
-                         documents = documents.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value).ToList();
-                     }
+                     //if (options.GetLimitOffset().HasValue)
+                     //{
+                     //    documents = documents.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value).ToList();
+                     //}
                      count = documents.Count;
                      return new QueryResult<Document>()
                      {
@@ -236,10 +236,10 @@ namespace ProjectNghiPhep
                     }).ToList();
                     //System.Diagnostics.Debug.WriteLine(options.GetLimitRowcount().Value);
                     int count = 0;
-                    if (options.GetLimitOffset().HasValue)
-                    {
-                        documents = documents.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value).ToList();
-                    }
+                    //if (options.GetLimitOffset().HasValue)
+                    //{
+                    //    documents = documents.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value).ToList();
+                    //}
                     count = documents.Count;
                     return new QueryResult<Document>()
                     {

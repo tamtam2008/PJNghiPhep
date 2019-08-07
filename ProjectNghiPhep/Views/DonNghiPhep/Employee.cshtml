@@ -27,6 +27,7 @@
             if (!window.localStorage.getItem('token')) {
                 window.localStorage.setItem('title', '@Model.Title.code');
                 window.localStorage.setItem('token', '@Model.C_id');
+                window.localStorage.setItem('username', '@Model.username');
             } else {
                 var title = window.localStorage.getItem('title')
                 $('#waitingTab').hide()
