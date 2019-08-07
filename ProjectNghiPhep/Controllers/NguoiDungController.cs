@@ -86,6 +86,23 @@ namespace ProjectNghiPhep.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public ActionResult SaveUser (User user)
+        {
+            NghiphepEntities db = new NghiphepEntities();
+            var result = db.Users.SingleOrDefault(b => b.C_id == user.C_id);
+            if (result != null)
+            {
+                result.username = user.username;
+                result.fullName = user.fullName;
+                result.email = user.email;
+                result.mobile = user.mobile;
+                result.contractId = user.contractId;
+                result.dayOff = user.dayOff;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Edit/" + user.C_id);
+        }
          
     }
 }

@@ -3,7 +3,7 @@
     ViewBag.Title = "CreateNew";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("CreateLeaveForm", "DonNghiPhep", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("SaveUser", "NguoiDung", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <div class="form-horizontal">
@@ -72,7 +72,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Lưu" class="btn btn-default" />
             </div>
         </div>
     </div>
