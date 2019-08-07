@@ -7,22 +7,22 @@
             $('#username_info').show();
             $('#login_button').hide();
             $('#username_info').first().text('Hello ' + username);
-            $("logout_button").show();
+            $("#logout_button").show();
         } else {
             $('#username_info').hide();
             $('#login_button').show();
-            $("logout_button").hide();
+            $("#logout_button").hide();
         }
     })
 </script>
 <div style="display: flexbox; justify-content: flex-start; flex-direction: row;">
-    <text id="username_info" style="margin-top: 5px;">
+    <text id="username_info" style="margin-top: 5px; font-weight: bold;">
     </text>
-    <button id="logout_button" class="btn btn-default">
+    &nbsp;
+    <button style="margin-top: -4px;" id="logout_button" class="btn btn-default" onclick="window.localStorage.clear(); window.location.replace('/Account/Login');">
         Đăng xuất
     </button>
 </div>
 <ul id="login_button">
-    <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-    <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <li>@Html.ActionLink("Đăng nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
 </ul>

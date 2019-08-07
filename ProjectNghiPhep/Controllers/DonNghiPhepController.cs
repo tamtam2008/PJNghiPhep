@@ -104,7 +104,8 @@ namespace ProjectNghiPhep.Controllers
                              status = doc.status,
                              createdAt = doc.createdAt,
                              startDate = doc.startDate,
-                             endDate = doc.endDate
+                             endDate = doc.endDate,
+                             reason = doc.reason
                          }).OrderBy(x => x.code);
             var documents = query.ToList().Select(r => new Document
             {
@@ -112,6 +113,7 @@ namespace ProjectNghiPhep.Controllers
                 createdBy = r.createdBy,
                 code = r.code,
                 status = r.status,
+                reason = r.reason,
                 createdAt = r.createdAt,
                 startDateString = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(r.startDate) / 1000d)).ToLocalTime().ToString(),
                 endDateString = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(r.endDate) / 1000d)).ToLocalTime().ToString(),
@@ -141,7 +143,7 @@ namespace ProjectNghiPhep.Controllers
         [HttpPost]
         public ActionResult CreateLeaveForm(TaoDonNghiPhep dnp)
         {
-            System.Diagnostics.Debug.WriteLine("CreateLeaveForm CreateLeaveForm CreateLeaveForm");
+            System.Diagnostics.Debug.WriteLine("CreateLeaveForm CreateLeaveForm CreateLeaveForm ", dnp.reason);
             if (ModelState.IsValid)
             {
                 NghiphepEntities db = new NghiphepEntities();
@@ -155,7 +157,8 @@ namespace ProjectNghiPhep.Controllers
                     createdAt = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
                     startDate = (float)(DateTime.ParseExact(dnp.dateStart, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
                     endDate = (float)(DateTime.ParseExact(dnp.dateEnd, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
-                    createdById = "USER_002"
+                    createdById = "USER_002",
+                    reason = dnp.reason
                 });
                 //try
                 //{
