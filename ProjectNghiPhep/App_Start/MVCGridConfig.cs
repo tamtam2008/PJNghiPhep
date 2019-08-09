@@ -75,12 +75,12 @@ namespace ProjectNghiPhep
                         .WithHeaderText("")
                         .WithHtmlEncoding(false)
                         .WithValueExpression((p, c) => c.UrlHelper.Action("VerifyDocument", "DonNghiPhep", new { id = p.C_id }))
-                        .WithValueTemplate("<a href='{Value}' class='btn btn-primary btn-verify' role='button' data-form-method='post'>Duyệt</a>");
+                        .WithValueTemplate("<a href='{Value}' class='btn btn-primary btn-verify' role='button' data-form-method='post' onclick=\"return confirm(\'Bạn có muốn duyệt đơn?\')\">Duyệt</a>");
                    cols.Add("CancelBtn").WithSorting(false)
                         .WithHeaderText("")
                         .WithHtmlEncoding(false)
                         .WithValueExpression((p, c) => c.UrlHelper.Action("CancelDocument", "DonNghiPhep", new { id = p.C_id }))
-                        .WithValueTemplate("<a href='{Value}' class='btn btn-danger btn-cancel'>Hủy</a>");
+                        .WithValueTemplate("<a href='{Value}' class='btn btn-danger btn-cancel' onclick='return confirm('Bạn có muốn hủy đơn?')'>Hủy</a>");
                     cols.Add("DetailBtn").WithSorting(false)
                         .WithHeaderText("")
                         .WithHtmlEncoding(false)

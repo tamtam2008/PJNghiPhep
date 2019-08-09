@@ -16,7 +16,7 @@
     })
 </script>
 <div style="display: flexbox; justify-content: flex-start; flex-direction: row;">
-    <button class="btn btn-link" id="username_info" style="font-weight: bold;" onclick="window.location.replace('/NguoiDung/Edit/' + localStorage.getItem('token'));">
+    <button class="btn btn-link" id="username_info" style="font-weight: bold;" onclick="window.location.replace('/NguoiDung/Profile/' + localStorage.getItem('token'));">
     </button>
     &nbsp;
     <button id="logout_button" class="btn btn-default" onclick="window.localStorage.clear(); window.location.replace('/Account/Login');">
@@ -24,5 +24,5 @@
     </button>
 </div>
 <ul id="login_button">
-    <li>@Html.ActionLink("Đăng nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <li>@Html.ActionLink("Đăng nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class="btn btn-default" })</li>
 </ul>

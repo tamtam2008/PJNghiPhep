@@ -31,10 +31,20 @@
                     }
                     return false;
                 }
+                $(document).ready(function ready() {
+                    var token = localStorage.getItem('token');
+                    var username = localStorage.getItem('username');
+                    var title = localStorage.getItem('title');
+                    if (title === 'GIAMDOC') {
+                        $("#form_nhanvien").show()
+                    } else {
+                        $("#form_nhanvien").hide()
+                    }
+                })
             </script>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                    <p class="site-title">@Html.ActionLink("Văn Lang University", "Index", "Home")</p>
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -43,9 +53,8 @@
                     <nav>
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li><a class="btn btn-link" onclick="linkTo()">Đơn Nghỉ Phép</a></li>
-                            <li>@Html.ActionLink("Nhân Viên", "Index", "NguoiDung")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li><a style="cursor: pointer;" onclick="linkTo()">Đơn Nghỉ Phép</a></li>
+                            <li id="form_nhanvien">@Html.ActionLink("Nhân Viên", "Index", "NguoiDung")</li>
                         </ul>
                     </nav>
                 </div>

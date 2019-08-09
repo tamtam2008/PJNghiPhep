@@ -23,7 +23,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.fullName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.fullName, new { htmlAttributes = new { @class = "form-control" }, disabled = "disabled", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.fullName, new { htmlAttributes = new { @class = "form-control" } })
                 <br />
                 @Html.ValidationMessageFor(model => model.fullName, "", new { @class = "text-danger" })
             </div>
@@ -32,7 +32,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.email, new { htmlAttributes = new { @class = "form-control" }, disabled = "disabled", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
                 <br />
                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
             </div>
@@ -41,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.mobile, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.mobile, new { htmlAttributes = new { @class = "form-control" }, disabled = "disabled", @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.mobile, new { htmlAttributes = new { @class = "form-control" } })
                 <br />
                 @Html.ValidationMessageFor(model => model.mobile, "", new { @class = "text-danger" })
             </div>
@@ -50,7 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.contractId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10" style="height: 27px;">
-                <select class="form-control" name="test" style="width: 300px;">
+                <select class="form-control" disabled name="test" style="width: 300px;">
                     @foreach (var item in ViewBag.contracts)
                     {
                         <option value="@item.C_id">@item.name</option>
@@ -64,7 +64,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.dayOff, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.dayOff, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.dayOff, new { htmlAttributes = new { @class = "form-control" }, disabled = "disabled", @readonly = "readonly" })
                 <br />
                 @Html.ValidationMessageFor(model => model.dayOff, "", new { @class = "text-danger" })
             </div>
