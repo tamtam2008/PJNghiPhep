@@ -13,8 +13,10 @@ namespace ProjectNghiPhep.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            //Lấy dữ liệu đơn nghỉ phép để hiển thị ra dashbord
             using (NghiphepEntities db = new NghiphepEntities())
             {
+                
                 var result = from u in db.Users
                              join d in db.Documents
                              on u.C_id equals d.createdById
@@ -27,7 +29,8 @@ namespace ProjectNghiPhep.Controllers
                                  Status = d.status,
                                  Reason = d.reason,
                                  ApproveOrRejectBy = d.verifiedById,
-                                 ApproveOrRejectDate = d.verifiedAt
+                                 ApproveOrRejectDate = d.verifiedAt,
+                                 DayOff = u.dayOff
                              };
                 var listData = new List<DashboardViewModel>();
                 foreach (var item in result)
@@ -42,6 +45,8 @@ namespace ProjectNghiPhep.Controllers
                         Status = item.Status == 0 ? "Chờ duyệt" : item.Status == 99 ? "Đã duyệt" : "Đã hủy",
                         ApproveOrRejectBy = item.ApproveOrRejectBy,
                         ApproveOrRejectDate = item.ApproveOrRejectDate.HasValue ? convertDoubleToDatetime(item.ApproveOrRejectDate.Value) : "",
+                        DayOff = item.DayOff.HasValue ? item.DayOff.Value : 0
+
                     };
                     listData.Add(r);
                 }

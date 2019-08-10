@@ -104,65 +104,8 @@ namespace ProjectNghiPhep.Controllers
             }
             return RedirectToAction("Edit/" + result.C_id);
         }
-
-        public ActionResult CreateUser()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult CreateUser(UserViewModel user)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(user);
-            }
-            using (NghiphepEntities db = new NghiphepEntities())
-            {
-                var use = db.Users.FirstOrDefault(x => x.C_id == user.C_id);
-                if (use != null)
-                {
-                    ModelState.AddModelError("", "ID đã tồn tại");
-                    return View(user);
-                }
-                var use1 = db.Users.FirstOrDefault(x => x.username == user.username);
-                if (use1 != null)
-                {
-                    ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
-                    return View(user);
-                }
-                var newUser = new User
-                {
-                    C_id = user.C_id,
-                    username = user.username,
-                    address = user.address,
-                    contractId = user.contractId,
-                    email = user.email,
-                    gender = user.gender,
-                    fullName = user.fullName,
-                    isActive = true,
-                    dayOff = user.dayOff,
-                    password = user.password,
-                    mobile = user.mobile,
-                    titleId = user.titleId,
-                    departmentId = user.departmentId,
-                    dateOfBirth = user.dateOfBirth,
-
-                };
-                try
-                {
-                    db.Users.Add(newUser);
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    ModelState.AddModelError("", "Lỗi hệ thống");
-                    return View(user);
-                }
-                return RedirectToAction("Index");
-            }
-        }
-
+        
+        //Đổi mật khẩu
         [AllowAnonymous]
         public ActionResult ChangePassword()
         {
@@ -173,17 +116,18 @@ namespace ProjectNghiPhep.Controllers
         [HttpPost]
         public ActionResult ChangePassword(ChangePasswordViewModel model)
         {
+            //validate
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-
+            //validate
             if (model.NewPassword != model.NewPasswordAgain)
             {
                 ModelState.AddModelError("", "Mật khẩu mới được nhập lại không khớp.");
                 return View(model);
             }
-
+            //Đổi trong database
             using (NghiphepEntities db = new NghiphepEntities())
             {
                 var user = db.Users.SingleOrDefault(x => x.username == User.Identity.Name && x.password == model.CurrentPassword);

@@ -7,6 +7,7 @@
         </div>
     </section>
 }
+@*View dashboard*@
 <h3>Danh sách đơn xin nghỉ phép</h3>
 @model IEnumerable<ProjectNghiPhep.Models.ViewModels.DashboardViewModel>
 <div class="container">
@@ -17,6 +18,7 @@
                 <th>Người tạo</th>
                 <th>Ngày nghỉ bắt đầu</th>
                 <th>Ngày nghỉ kết thúc</th>
+                <th>Ngày phép còn lại</th>
                 <th>Lý do</th>
                 <th>Trạng thái</th>
                 <th>Người duyệt</th>
@@ -31,6 +33,7 @@
                     <td>@item.CreateBy</td>
                     <td>@item.StartDate</td>
                     <td>@item.EndDate</td>
+                    <td>@item.DayOff</td>
                     <td>@item.Reason</td>
                     <td>@item.Status</td>
                     <td>@item.ApproveOrRejectBy</td>

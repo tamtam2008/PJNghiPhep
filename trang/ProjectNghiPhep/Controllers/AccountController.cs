@@ -23,6 +23,7 @@ namespace ProjectNghiPhep.Controllers
 
         public ActionResult Logout()
         {
+            //Thêm hàm logout, khi logout thì clear session đi
             Session.Clear();
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
@@ -53,6 +54,8 @@ namespace ProjectNghiPhep.Controllers
             }).ToList();
             if (users.Count > 0)
             {
+                //Sửa lại hàm login, trong asp.net dùng cái này để login
+                //Lưu session login
                 FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                 var identity = new GenericIdentity(model.UserName);
                 var principal = new GenericPrincipal(identity, new string[0]);

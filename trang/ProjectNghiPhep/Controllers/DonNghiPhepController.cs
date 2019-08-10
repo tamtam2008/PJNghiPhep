@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using ProjectNghiPhep.Models;
 using System.Data.Entity.Validation;
-using ProjectNghiPhep.Email;
 
 namespace ProjectNghiPhep.Controllers
 {
@@ -154,8 +153,7 @@ namespace ProjectNghiPhep.Controllers
                 NghiphepEntities db = new NghiphepEntities();
                 Document document = queryDocument();
                 string code = CreateAutoCode(document != null ? document.code : null);
-                var user = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
-                var doc = new Document()
+                db.Documents.Add(new Document()
                 {
                     C_id = code,
                     code = code,
@@ -163,10 +161,9 @@ namespace ProjectNghiPhep.Controllers
                     createdAt = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
                     startDate = (float)(DateTime.ParseExact(dnp.dateStart, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
                     endDate = (float)(DateTime.ParseExact(dnp.dateEnd, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
-                    createdById = user.C_id,
+                    createdById = "USER_002",
                     reason = dnp.reason
-                };
-                db.Documents.Add(doc);
+                });
                 //try
                 //{
                 db.SaveChanges();
@@ -184,19 +181,6 @@ namespace ProjectNghiPhep.Controllers
                 //    }
                 //}
                 //write code to update student 
-                string mailBody = "Xin chào: " + user.fullName + "<br>"
-                                + "Thông tin đơn nghỉ phép bạn vừa tạo: <br>"
-                                + "- Từ ngày: " + dnp.dateStart + "<br>"
-                                + "- Đến ngày: " + dnp.dateEnd + "<br>"
-                                + "- Lý do: " + dnp.reason + "<br>"
-                                + "Xin cảm ơn.";
-                var mail = new MailModel
-                {
-                    ListToEmail = new List<string> { user.email },
-                    Body = mailBody,
-                    EmailSubject = "Thông tin đơn xin nghỉ phép"
-                };
-                EmailHelper.SendMail(mail);
                 return RedirectToAction("Employee");
             }
             return RedirectToAction("CreateNew");
@@ -234,13 +218,9 @@ namespace ProjectNghiPhep.Controllers
             NghiphepEntities db = new NghiphepEntities();
             Document document = queryDocument();
             var result = db.Documents.SingleOrDefault(b => b.C_id == id);
-            var admin = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
             if (result != null)
             {
-                var verifyAt = (float)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000;
                 result.status = 99;
-                result.verifiedById = admin?.C_id;
-                result.verifiedAt = verifyAt;
                 db.SaveChanges();
             }
             var user = db.Users.SingleOrDefault(b => b.C_id == result.createdById);
@@ -249,24 +229,6 @@ namespace ProjectNghiPhep.Controllers
                 user.dayOff = user.dayOff - (int)((result.endDate - result.startDate) / 1000 / 3600 / 24);
                 db.SaveChanges();
             }
-            var start = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(result.startDate) / 1000d)).ToLocalTime().ToString();
-            var end = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(result.endDate) / 1000d)).ToLocalTime().ToString();
-
-            string mailBody = "Xin chào: " + user?.fullName + "<br>"
-                                + "Đơn nghỉ phép của bạn đã được duyệt" + "<br><br>"
-                                + "- Mã đơn: " + result?.C_id + "<br>"
-                                + "- Từ ngày: " + start + "<br>"
-                                + "- Đến ngày: " + end + "<br>"
-                                + "- Lý do: " + result?.reason + "<br>"
-                                + "Người duyệt: " + admin?.fullName + "<br>"
-                                + "Xin cảm ơn.";
-            var mail = new MailModel
-            {
-                ListToEmail = new List<string> { user?.email },
-                Body = mailBody,
-                EmailSubject = "Đơn nghỉ phép được duyệt"
-            };
-            EmailHelper.SendMail(mail);
             return RedirectToAction("Manager");
         }
 
@@ -276,35 +238,11 @@ namespace ProjectNghiPhep.Controllers
             NghiphepEntities db = new NghiphepEntities();
             Document document = queryDocument();
             var result = db.Documents.SingleOrDefault(b => b.C_id == id);
-            var admin = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
             if (result != null)
             {
-                var verifyAt = (float)(DateTime.Now.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000;
                 result.status = 100;
-                result.verifiedById = admin?.C_id;
-                result.verifiedAt = verifyAt;
                 db.SaveChanges();
-
-                var start = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(result.startDate) / 1000d)).ToLocalTime().ToString();
-                var end = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(result.endDate) / 1000d)).ToLocalTime().ToString();
-                var user = db.Users.SingleOrDefault(b => b.C_id == result.createdById);
-                string mailBody = "Xin chào: " + user?.fullName + "<br><br>"
-                                    + "Đơn nghỉ phép của bạn không được duyệt" + "<br>"
-                                    + "- Mã đơn: " + result.C_id + "<br>"
-                                    + "- Từ ngày: " + start + "<br>"
-                                    + "- Đến ngày: " + end + "<br>"
-                                    + "- Lý do: " + result.reason + "<br>"
-                                    + "Người hủy: " + admin?.fullName + "<br>"
-                                    + "Xin cảm ơn.";
-                var mail = new MailModel
-                {
-                    ListToEmail = new List<string> { user?.email },
-                    Body = mailBody,
-                    EmailSubject = "Đơn nghỉ phép không được duyệt"
-                };
-                EmailHelper.SendMail(mail);
             }
-
             return RedirectToAction("Manager");
         }
 

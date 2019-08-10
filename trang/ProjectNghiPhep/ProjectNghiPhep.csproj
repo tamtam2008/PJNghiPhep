@@ -200,7 +200,6 @@
     <Compile Include="Controllers\DonNghiPhepController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistersController.cs" />
-    <Compile Include="Email\EmailHelper.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -439,7 +438,6 @@
     <Content Include="Views\Registers\PhanQuyen.cshtml" />
     <Content Include="Views\Registers\SetDataInDatabase.cshtml" />
     <Content Include="Views\Registers\ShowDataBaseForUser.cshtml" />
-    <Content Include="Views\NguoiDung\CreateUser.cshtml" />
     <Content Include="Views\NguoiDung\ChangePassword.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
