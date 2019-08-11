@@ -1,0 +1,24 @@
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\bin\Debug\QuanLyNguoiDung9.exe.config
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\bin\Debug\QuanLyNguoiDung9.exe
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\bin\Debug\QuanLyNguoiDung9.pdb
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.Form1.resources
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.Properties.Resources.resources
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.csproj.GenerateResource.Cache
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.exe
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.pdb
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.frm_main.resources
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.Them.resources
+c:\users\admin\documents\visual studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\QuanLyNguoiDung9\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.TimKiem.resources
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\bin\Debug\QuanLyNguoiDung9.exe.config
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.exe
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.pdb
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\bin\Debug\QuanLyNguoiDung9.exe
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\bin\Debug\QuanLyNguoiDung9.pdb
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.csprojResolveAssemblyReference.cache
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.Form1.resources
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.frm_main.resources
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.Properties.Resources.resources
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.Them.resources
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.TimKiem.resources
+C:\Users\Tam\Desktop\ProjectNghiPhep\QuanLyNguoiDung\QuanLyNguoiDung9\obj\Debug\QuanLyNguoiDung9.csproj.GenerateResource.Cache

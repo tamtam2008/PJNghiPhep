@@ -1,0 +1,171 @@
+﻿@model ProjectNghiPhep.Models.User
+@{
+    ViewBag.Title = "Register";
+}
+</br>
+<section>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+         @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div class="form-horizontal">
+            <h4>Đăng Ký</h4>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2">Mã nhân viên</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.C_id)
+                    @Html.ValidationMessageFor(m => m.C_id)
+                </div>
+            </div>
+            <div class="row">
+                <label class="col-sm-2"></label>
+                <div class="col-sm-10">
+                    <p id="Status" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Họ & tên</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.fullName)
+                    @Html.ValidationMessageFor(m => m.fullName)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Giới tính</label>  
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.gender)
+                    @Html.ValidationMessageFor(m => m.gender)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Ngày sinh</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.dateOfBirth, "{dd-MM-yyyy}")
+                    @*@Html.ValidationMessageFor(m => m.dateOfBirth)*@
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Địa chỉ</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.address)
+                    @Html.ValidationMessageFor(m => m.address)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Email</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.email, new { @placeholder = "E-mail" })
+                    @Html.ValidationMessageFor(m => m.email)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Số điện thoại</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.mobile)
+                    @Html.ValidationMessageFor(m => m.mobile)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Tên đăng nhập</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.username)
+                    @Html.ValidationMessageFor(m => m.username)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Mật khẩu</label>
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.password)
+                    @Html.ValidationMessageFor(m => m.password)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Đăng ký" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*@Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div class="form-horizontal">
+            <h4>Đăng kí</h4>
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(m => m.username, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.username)
+                    @Html.ValidationMessageFor(m => m.username)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.password)
+                    @Html.ValidationMessageFor(m => m.password)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.email)
+                    @Html.ValidationMessageFor(m => m.email)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.gender)
+                    @Html.ValidationMessageFor(m => m.gender)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.address, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.address)
+                    @Html.ValidationMessageFor(m => m.address)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.mobile, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.mobile)
+                    @Html.ValidationMessageFor(m => m.mobile)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Đăng ký" />
+                </div>
+            </div>
+        </div>*@
+    }
+</section>
+
+@*<script>
+    function UserIdCheck() {
+        $("#Status").html("Checking...");
+        $.post("@Url.Action("CheckUserId", "Account")", {
+            userid: $(".UserId").val()
+        },
+        function (data) {
+            if (data == 0) {
+                $("#Status").html('<font color="Green">Available !. you can take it.</font>');
+                $(".UserId").css("border-color", "Green");
+            }
+            else {
+                $("#Status").html('<font color="Red">That ID is taken. Try another.</font>');
+                $(".UserId").css("border-color", "Red");
+            }
+        });
+    }
+</script>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
