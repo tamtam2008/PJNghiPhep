@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ProjectNghiPhep.Models;
 using System.Data.Entity.Validation;
+using ProjectNghiPhep.Email;
 
 namespace ProjectNghiPhep.Controllers
 {
@@ -147,6 +148,7 @@ namespace ProjectNghiPhep.Controllers
             if (ModelState.IsValid)
             {
                 NghiphepEntities db = new NghiphepEntities();
+                var user = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
                 Document document = queryDocument();
                 string code = CreateAutoCode(document != null ? document.code : null);
                 db.Documents.Add(new Document()
@@ -157,7 +159,7 @@ namespace ProjectNghiPhep.Controllers
                     createdAt = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
                     startDate = (float)(DateTime.ParseExact(dnp.dateStart, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
                     endDate = (float)(DateTime.ParseExact(dnp.dateEnd, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
-                    createdById = "USER_002",
+                    createdById = user.C_id,
                     reason = dnp.reason
                 });
                 //try
