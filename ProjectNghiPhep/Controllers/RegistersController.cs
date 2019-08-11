@@ -22,18 +22,30 @@ namespace ProjectNghiPhep.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SetDataInDataBase(NHANVIEN model)
+        public ActionResult SetDataInDataBase(User model)
         {
             User tbl = new User();
+            tbl.C_id = model.C_id;
             tbl.fullName = model.fullName;
             tbl.gender = model.gender;
-            tbl.dateOfBirth = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000;
+            //tbl.dateOfBirth = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000;
+            tbl.dateOfBirth = model.dateOfBirth;
             tbl.address = model.address;
             tbl.email = model.email;
             tbl.mobile = model.mobile;
             tbl.username = model.username;
             tbl.password = model.password;
-            //tbl.chucvu = "";
+            /////////////////////////Kiểm tra radiobutton///////////////
+            if (model.titleId != null)
+            {
+                tbl.titleId = "TITLE_001";
+            }
+            else
+            {
+                tbl.titleId = "TITLE_002";
+            }
+            ///////////////////////////////////////////////////////////
+            tbl.isActive = true;
 
             db.Users.Add(tbl);
             db.SaveChanges();
@@ -41,10 +53,52 @@ namespace ProjectNghiPhep.Controllers
         }
 
 
-        public ActionResult ShowDataBaseForUser()
+        public ActionResult ShowDataBaseForUser(string id)
         {
-            var item = db.Users.ToList();
-            return View(item);
+            //var item = db.Users.ToList();
+            //return View(item);
+            if (id != null)
+            {
+                NghiphepEntities db = new NghiphepEntities();
+                var query = (from user in db.Users
+                             select new
+                             {
+                                 C_id = user.C_id,
+                                 isActive = user.isActive,
+                                 titleId = user.titleId,
+                                 username = user.username,
+                                 fullName = user.fullName,
+                                 address = user.address,
+                                 gender = user.gender,
+                                 email = user.email,
+                                 mobile = user.mobile,
+
+                             });
+                var users = query.ToList().Select(r => new User
+                {
+                    C_id = r.C_id,
+                    isActive = r.isActive,
+                    titleId = r.titleId,
+                    username = r.username,
+                    fullName = r.fullName,
+                    address = r.address,
+                    gender = r.gender,
+                    email = r.email,
+                    mobile = r.mobile,
+                }).ToList();
+                return View(users[0]);
+            }
+            else
+            {
+                return View(new User()
+                {
+                    username = "default",
+                    Title = new Title()
+                    {
+                        name = "Default"
+                    }
+                });
+            }
         }
 
         public ActionResult Delete(string id)
@@ -59,7 +113,27 @@ namespace ProjectNghiPhep.Controllers
         public ActionResult Edit(string id)
         {
             var item = db.Users.Where(x => x.C_id == id).First();
+
             return View(item);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(User modl)
+        {
+            var item = db.Users.Where(x => x.C_id == modl.C_id).First();
+            item.C_id = modl.C_id;
+            item.fullName = modl.fullName;
+            item.gender = modl.gender;
+            //item.dateOfBirth = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000;
+            item.dateOfBirth = modl.dateOfBirth;
+            item.address = modl.address;
+            item.email = modl.email;
+            item.mobile = modl.mobile;
+            item.username = modl.username;
+            item.password = modl.password;
+
+            db.SaveChanges();
+            return View();
         }
         //[HttpPost]
 
