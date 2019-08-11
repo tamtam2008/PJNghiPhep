@@ -1,0 +1,103 @@
+﻿@model ProjectNghiPhep.Models.User
+
+<section>
+    @using (Html.BeginForm("SetDataInDatabase", "Registers", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <div class="form-horizontal">
+            <h4>Thêm người dùng mới</h4>
+            <hr />
+            <div class="form-group">
+                <label class="control-label col-md-2">Mã nhân viên</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.C_id)
+                    @Html.ValidationMessageFor(m => m.C_id)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Họ & tên</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.fullName)
+                    @Html.ValidationMessageFor(m => m.fullName)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Giới tính</label>  
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.gender)
+                    @Html.ValidationMessageFor(m => m.gender)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Ngày sinh</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.dateOfBirth, "{dd-MM-yyyy}")
+                    @Html.ValidationMessageFor(m => m.dateOfBirth)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Địa chỉ</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.address)
+                    @Html.ValidationMessageFor(m => m.address)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Email</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.email, new { @placeholder = "E-mail" })
+                    @Html.ValidationMessageFor(m => m.email)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Số điện thoại</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.mobile)
+                    @Html.ValidationMessageFor(m => m.mobile)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Tên đăng nhập</label>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.username)
+                    @Html.ValidationMessageFor(m => m.username)
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Mật khẩu</label>
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.password)
+                    @Html.ValidationMessageFor(m => m.password)
+                </div>
+            </div>
+            <div>  
+                <div class="form-group">
+                    <label class="control-label col-md-2">Phân quyền</label>
+                    <div class="col-md-2">
+                        <div>
+                            @Html.RadioButtonFor(m => m.titleId, "1", new { @class = "control-label col-md-2" })
+                            @Html.Label("Quản trị")
+                        </div>
+                        <div>
+                            @Html.RadioButtonFor(m => m.titleId, "", new { @class = "control-label col-md-2" })
+                            @Html.Label("Nhân viên")
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <div class="button">
+                        <button>
+                            Duyệt
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</section>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>

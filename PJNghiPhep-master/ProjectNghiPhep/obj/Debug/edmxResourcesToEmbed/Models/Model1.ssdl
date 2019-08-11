@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="nghiphepModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ContractType">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="dayOff" Type="int" />
+    <Property Name="duration" Type="int" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="createdById" Type="varchar" MaxLength="255" />
+    <Property Name="createdAt" Type="float" />
+    <Property Name="managerId" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'C:\USERS\TAM\DESKTOP\PROJECTNGHIPHEP\PROJECTNGHIPHEP\APP_DATA\NGHIPHEP.MDF.dbo.Document' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Document">
+          <Property Name="_id" Type="varchar" MaxLength="255" />
+          <Property Name="code" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="int" />
+          <Property Name="createdById" Type="varchar" MaxLength="255" />
+          <Property Name="createdAt" Type="float" />
+          <Property Name="verifiedById" Type="varchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Title">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="code" Type="varchar" MaxLength="255" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="int" />
+    <Property Name="createdById" Type="varchar" MaxLength="255" />
+    <Property Name="createdAt" Type="float" />
+    <Property Name="titleId" Type="varchar" MaxLength="255" />
+    <Property Name="departmentId" Type="varchar" MaxLength="255" />
+    <Property Name="contractId" Type="varchar" MaxLength="255" />
+    <Property Name="dayOff" Type="int" />
+  </EntityType>
+  <Association Name="FK__Departmen__creat__2B3F6F97">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="_id" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="createdById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Departmen__manag__2C3393D0">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="_id" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="managerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+error 6004: The table 'C:\USERS\TAM\DESKTOP\PROJECTNGHIPHEP\PROJECTNGHIPHEP\APP_DATA\NGHIPHEP.MDF.dbo.Document' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Document__create__35BCFE0A" />-->
+  <!--Errors Found During Generation:
+error 6004: The table 'C:\USERS\TAM\DESKTOP\PROJECTNGHIPHEP\PROJECTNGHIPHEP\APP_DATA\NGHIPHEP.MDF.dbo.Document' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Document__verifi__36B12243" />-->
+  <Association Name="FK__Users__contractI__24927208">
+    <End Role="ContractType" Type="Self.ContractType" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContractType">
+        <PropertyRef Name="_id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="contractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__dayOff__22AA2996">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Users1" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="_id" />
+      </Principal>
+      <Dependent Role="Users1">
+        <PropertyRef Name="createdById" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__departmen__2A4B4B5E">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="_id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="departmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__titleId__239E4DCF">
+    <End Role="Title" Type="Self.Title" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Title">
+        <PropertyRef Name="_id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="titleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="nghiphepModelStoreContainer">
+    <EntitySet Name="ContractType" EntityType="Self.ContractType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Title" EntityType="Self.Title" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Departmen__creat__2B3F6F97" Association="Self.FK__Departmen__creat__2B3F6F97">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Departmen__manag__2C3393D0" Association="Self.FK__Departmen__manag__2C3393D0">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__contractI__24927208" Association="Self.FK__Users__contractI__24927208">
+      <End Role="ContractType" EntitySet="ContractType" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__dayOff__22AA2996" Association="Self.FK__Users__dayOff__22AA2996">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Users1" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__departmen__2A4B4B5E" Association="Self.FK__Users__departmen__2A4B4B5E">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__titleId__239E4DCF" Association="Self.FK__Users__titleId__239E4DCF">
+      <End Role="Title" EntitySet="Title" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
