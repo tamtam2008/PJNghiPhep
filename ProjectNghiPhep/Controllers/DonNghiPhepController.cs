@@ -163,20 +163,6 @@ namespace ProjectNghiPhep.Controllers
                 //try
                 //{
                 db.SaveChanges();
-                //}
-                //catch (DbEntityValidationException e)
-                //{
-                //    foreach (var eve in e.EntityValidationErrors)
-                //    {
-                //        System.Diagnostics.Debug.WriteLine(eve.Entry.Entity.GetType().Name, eve.Entry.State);
-                //        foreach (var ve in eve.ValidationErrors)
-                //        {
-                //            System.Diagnostics.Debug.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                //                ve.PropertyName, ve.ErrorMessage);
-                //        }
-                //    }
-                //}
-                //write code to update student 
                 return RedirectToAction("Employee");
             }
             return RedirectToAction("CreateNew");
