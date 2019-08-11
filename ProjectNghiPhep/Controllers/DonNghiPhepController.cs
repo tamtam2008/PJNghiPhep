@@ -217,6 +217,8 @@ namespace ProjectNghiPhep.Controllers
             if (result != null)
             {
                 result.status = 99;
+                result.verifiedById = "USER_001";
+                result.verifiedAt = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000;
                 db.SaveChanges();
             }
             var user = db.Users.SingleOrDefault(b => b.C_id == result.createdById);
@@ -237,6 +239,8 @@ namespace ProjectNghiPhep.Controllers
             if (result != null)
             {
                 result.status = 100;
+                result.verifiedById = "USER_001";
+                result.verifiedAt = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000;
                 db.SaveChanges();
             }
             return RedirectToAction("Manager");

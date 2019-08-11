@@ -242,6 +242,7 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>NghiPhepModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\ViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
