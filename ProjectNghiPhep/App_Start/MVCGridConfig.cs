@@ -789,6 +789,326 @@ namespace ProjectNghiPhep
                     };
                 })
             );
+
+            ////////////////////////////////////////Chờ duyệttttttttttttttt///////////////////////////////////////////////
+            MVCGridDefinitionTable.Add("WaitingUserGrid", new MVCGridBuilder<User>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .WithSorting(sorting: true, defaultSortColumn: "Id", defaultSortDirection: SortDirection.Dsc)
+                //.WithPaging(true, 5)
+                .WithAdditionalQueryOptionNames("search")
+                .AddColumns(cols =>
+                {
+                    // Add your columns here
+                    cols.Add("_id").WithColumnName("_id")
+                        .WithHeaderText("Mã nhân viên")
+                        .WithValueExpression(i => i.C_id); // use the Value Expression to return the cell text for this column
+                    cols.Add("isActive").WithColumnName("isActive")
+                        .WithHeaderText("Trạng thái")
+                        .WithValueExpression((i, c) =>
+                        {
+                            if (i.isActive == false)
+                            {
+                                return "Chờ duyệt";
+                            }
+                            else
+                                if (i.isActive == true && i.titleId != null)
+                                {
+                                    return "Đã duyệt";
+                                }
+                            return "Đã hủy";
+                        });
+
+                    cols.Add("username").WithColumnName("username")
+                         .WithHeaderText("User name")
+                         .WithValueExpression(i => i.username);
+                    cols.Add("fullName").WithColumnName("fullName")
+                         .WithHeaderText("Họ & tên")
+                         .WithValueExpression(i => i.fullName);
+                    cols.Add("address").WithColumnName("address")
+                         .WithHeaderText("Địa chỉ")
+                         .WithValueExpression(i => i.address);
+                    cols.Add("gender").WithColumnName("gender")
+                         .WithHeaderText("Giới tính")
+                         .WithValueExpression(i => i.gender);
+                    cols.Add("email").WithColumnName("email")
+                         .WithHeaderText("Email")
+                         .WithValueExpression(i => i.email);
+                    cols.Add("mobile").WithColumnName("mobile")
+                         .WithHeaderText("Số điện thoại")
+                         .WithValueExpression(i => i.mobile);
+                    ///////////////////Nút VIEW //////////////////////////////////////
+                    //cols.Add("ViewBtn").WithSorting(false)
+                    //    .WithHeaderText("")
+                    //    .WithHtmlEncoding(false)
+                    //    .WithValueExpression((p, c) => c.UrlHelper.Action("ShowDataBaseForUser", "Registers", new { id2 = p.C_id }))
+                    //    .WithValueTemplate("<a href='{Value}' id='btnShowModal' class='btn btn-primary btn-verify' role='button' data-form-method='post'>View</a>");
+                    ///////////////////////////////////////////////////////////////////data-form-method='post'
+                })
+
+
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var result = new QueryResult<User>();
+                    NghiphepEntities db = new NghiphepEntities();
+                    // Query your data here. Obey Ordering, paging and filtering parameters given in the context.QueryOptions.
+                    // Use Entity Framework, a module from your IoC Container, or any other method.
+                    // Return QueryResult object containing IEnumerable<YouModelItem>
+                    var options = context.QueryOptions;
+                    var query = (from user in db.Users
+
+                                 where user.isActive == false
+                                 select new
+                                 {
+                                     C_id = user.C_id,
+                                     username = user.username,
+                                     fullName = user.fullName,
+                                     address = user.address,
+                                     gender = user.gender,
+                                     email = user.email,
+                                     mobile = user.mobile,
+
+                                 });
+                    System.Diagnostics.Debug.WriteLine(options.GetLimitOffset().HasValue);
+                    var users = query.ToList().Select(r => new User
+                    {
+                        C_id = r.C_id,
+                        username = r.username,
+                        fullName = r.fullName,
+                        address = r.address,
+                        gender = r.gender,
+                        email = r.email,
+                        mobile = r.mobile,
+
+                    }).ToList();
+                    //System.Diagnostics.Debug.WriteLine(options.GetLimitRowcount().Value);
+                    int count = 0;
+                    //if (options.GetLimitOffset().HasValue)
+                    //{
+                    //    documents = documents.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value).ToList();
+                    //}
+                    System.Diagnostics.Debug.WriteLine(users.Count);
+                    count = users.Count;
+                    return new QueryResult<User>()
+                    {
+                        Items = users,
+                        TotalRecords = count // if paging is enabled, return the total number of records of all pages
+                    };
+                })
+
+
+            );
+
+            ///////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////Đã duyệttttttttt////////////////////////////////////
+            MVCGridDefinitionTable.Add("VerifyUserGrid", new MVCGridBuilder<User>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .WithSorting(sorting: true, defaultSortColumn: "Id", defaultSortDirection: SortDirection.Dsc)
+                //.WithPaging(true, 5)
+                .WithAdditionalQueryOptionNames("search")
+                .AddColumns(cols =>
+                {
+                    // Add your columns here
+                    cols.Add("_id").WithColumnName("_id")
+                        .WithHeaderText("Mã nhân viên")
+                        .WithValueExpression(i => i.C_id); // use the Value Expression to return the cell text for this column
+                    cols.Add("isActive").WithColumnName("isActive")
+                        .WithHeaderText("Trạng thái")
+                        .WithValueExpression((i, c) =>
+                        {
+                            if (i.isActive == false)
+                            {
+                                return "Chờ duyệt";
+                            }
+                            else
+                                if (i.isActive == true && i.titleId != null)
+                                {
+                                    return "Đã duyệt";
+                                }
+                            return "Đã hủy";
+                        });
+
+                    cols.Add("username").WithColumnName("username")
+                         .WithHeaderText("User name")
+                         .WithValueExpression(i => i.username);
+                    cols.Add("fullName").WithColumnName("fullName")
+                         .WithHeaderText("Họ & tên")
+                         .WithValueExpression(i => i.fullName);
+                    cols.Add("address").WithColumnName("address")
+                         .WithHeaderText("Địa chỉ")
+                         .WithValueExpression(i => i.address);
+                    cols.Add("gender").WithColumnName("gender")
+                         .WithHeaderText("Giới tính")
+                         .WithValueExpression(i => i.gender);
+                    cols.Add("email").WithColumnName("email")
+                         .WithHeaderText("Email")
+                         .WithValueExpression(i => i.email);
+                    cols.Add("mobile").WithColumnName("mobile")
+                         .WithHeaderText("Số điện thoại")
+                         .WithValueExpression(i => i.mobile);
+                })
+
+
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var result = new QueryResult<User>();
+                    NghiphepEntities db = new NghiphepEntities();
+                    // Query your data here. Obey Ordering, paging and filtering parameters given in the context.QueryOptions.
+                    // Use Entity Framework, a module from your IoC Container, or any other method.
+                    // Return QueryResult object containing IEnumerable<YouModelItem>
+                    var options = context.QueryOptions;
+                    var query = (from user in db.Users
+
+                                 where user.isActive == true && user.titleId != null
+                                 select new
+                                 {
+                                     C_id = user.C_id,
+                                     isActive = user.isActive,
+                                     titleId = user.titleId,
+                                     username = user.username,
+                                     fullName = user.fullName,
+                                     address = user.address,
+                                     gender = user.gender,
+                                     email = user.email,
+                                     mobile = user.mobile,
+
+                                 });
+                    System.Diagnostics.Debug.WriteLine(options.GetLimitOffset().HasValue);
+                    var users = query.ToList().Select(r => new User
+                    {
+                        C_id = r.C_id,
+                        isActive = r.isActive,
+                        titleId = r.titleId,
+                        username = r.username,
+                        fullName = r.fullName,
+                        address = r.address,
+                        gender = r.gender,
+                        email = r.email,
+                        mobile = r.mobile,
+
+                    }).ToList();
+                    //System.Diagnostics.Debug.WriteLine(options.GetLimitRowcount().Value);
+                    int count = 0;
+                    //if (options.GetLimitOffset().HasValue)
+                    //{
+                    //    documents = documents.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value).ToList();
+                    //}
+                    System.Diagnostics.Debug.WriteLine(users.Count);
+                    count = users.Count;
+                    return new QueryResult<User>()
+                    {
+                        Items = users,
+                        TotalRecords = count // if paging is enabled, return the total number of records of all pages
+                    };
+                })
+
+
+            );
+            ////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////Người dùng//////////////////////////////////
+            MVCGridDefinitionTable.Add("VerifyUsersGrid", new MVCGridBuilder<User>()
+                .WithAuthorizationType(AuthorizationType.AllowAnonymous)
+                .WithSorting(sorting: true, defaultSortColumn: "Id", defaultSortDirection: SortDirection.Dsc)
+                //.WithPaging(true, 5)
+                .WithAdditionalQueryOptionNames("search")
+                .AddColumns(cols =>
+                {
+                    // Add your columns here
+                    cols.Add("_id").WithColumnName("_id")
+                        .WithHeaderText("Mã nhân viên")
+                        .WithValueExpression(i => i.C_id); // use the Value Expression to return the cell text for this column
+                    cols.Add("isActive").WithColumnName("isActive")
+                        .WithHeaderText("Trạng thái")
+                        .WithValueExpression((i, c) =>
+                        {
+                            if (i.isActive == false)
+                            {
+                                return "Chờ duyệt";
+                            }
+                            else
+                                if (i.isActive == true && i.titleId != null)
+                                {
+                                    return "Đã duyệt";
+                                }
+                            return "Đã hủy";
+                        });
+
+                    cols.Add("username").WithColumnName("username")
+                         .WithHeaderText("User name")
+                         .WithValueExpression(i => i.username);
+                    cols.Add("fullName").WithColumnName("fullName")
+                         .WithHeaderText("Họ & tên")
+                         .WithValueExpression(i => i.fullName);
+                    cols.Add("address").WithColumnName("address")
+                         .WithHeaderText("Địa chỉ")
+                         .WithValueExpression(i => i.address);
+                    cols.Add("gender").WithColumnName("gender")
+                         .WithHeaderText("Giới tính")
+                         .WithValueExpression(i => i.gender);
+                    cols.Add("email").WithColumnName("email")
+                         .WithHeaderText("Email")
+                         .WithValueExpression(i => i.email);
+                    cols.Add("mobile").WithColumnName("mobile")
+                         .WithHeaderText("Số điện thoại")
+                         .WithValueExpression(i => i.mobile);
+                })
+
+
+                .WithRetrieveDataMethod((context) =>
+                {
+                    var result = new QueryResult<User>();
+                    NghiphepEntities db = new NghiphepEntities();
+                    // Query your data here. Obey Ordering, paging and filtering parameters given in the context.QueryOptions.
+                    // Use Entity Framework, a module from your IoC Container, or any other method.
+                    // Return QueryResult object containing IEnumerable<YouModelItem>
+                    var options = context.QueryOptions;
+                    var query = (from user in db.Users
+
+                                 where user.isActive == true && user.titleId != null
+                                 select new
+                                 {
+                                     C_id = user.C_id,
+                                     isActive = user.isActive,
+                                     titleId = user.titleId,
+                                     username = user.username,
+                                     fullName = user.fullName,
+                                     address = user.address,
+                                     gender = user.gender,
+                                     email = user.email,
+                                     mobile = user.mobile,
+
+                                 });
+                    System.Diagnostics.Debug.WriteLine(options.GetLimitOffset().HasValue);
+                    var users = query.ToList().Select(r => new User
+                    {
+                        C_id = r.C_id,
+                        isActive = r.isActive,
+                        titleId = r.titleId,
+                        username = r.username,
+                        fullName = r.fullName,
+                        address = r.address,
+                        gender = r.gender,
+                        email = r.email,
+                        mobile = r.mobile,
+
+                    }).ToList();
+                    //System.Diagnostics.Debug.WriteLine(options.GetLimitRowcount().Value);
+                    int count = 0;
+                    //if (options.GetLimitOffset().HasValue)
+                    //{
+                    //    documents = documents.Skip(options.GetLimitOffset().Value).Take(options.GetLimitRowcount().Value).ToList();
+                    //}
+                    System.Diagnostics.Debug.WriteLine(users.Count);
+                    count = users.Count;
+                    return new QueryResult<User>()
+                    {
+                        Items = users,
+                        TotalRecords = count // if paging is enabled, return the total number of records of all pages
+                    };
+                })
+
+
+            );
+            ////////////////////////////////////////////////////////////////////////////////////////
         }
     }
 }
