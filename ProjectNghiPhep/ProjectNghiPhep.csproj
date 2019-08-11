@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -198,6 +200,7 @@
     <Compile Include="Controllers\DonNghiPhepController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistersController.cs" />
+    <Compile Include="Email\EmailHelper.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -242,9 +245,14 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>NghiPhepModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\ViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\nghiphep.mdf" />
+    <Content Include="App_Data\nghiphep_log.ldf">
+      <DependentUpon>nghiphep.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -417,10 +425,8 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
-    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Views\DonNghiPhep\Employee.cshtml" />
     <Content Include="Views\DonNghiPhep\ViewDocument.cshtml" />
     <None Include="Views\Home\About.cshtml" />
@@ -431,7 +437,7 @@
     <Content Include="Views\Registers\PhanQuyen.cshtml" />
     <Content Include="Views\Registers\SetDataInDatabase.cshtml" />
     <Content Include="Views\Registers\ShowDataBaseForUser.cshtml" />
-    <Content Include="Views\NguoiDung\Profile.cshtml" />
+    <Content Include="Views\NguoiDung\CreateUser.cshtml" />
     <None Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\_LoginPartial.cshtml" />
@@ -439,9 +445,7 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
