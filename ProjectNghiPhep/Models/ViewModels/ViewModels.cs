@@ -43,34 +43,4 @@ namespace ProjectNghiPhep.Models.ViewModels
         public bool isActive { get; set; }
     }
     
-    public class ChangePasswordViewModel
-    {
-        [Required(ErrorMessage = "Mật khẩu hiện tại không được để trống")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Mật khẩu hiện tại")]
-        public string CurrentPassword { get; set; }
-
-        [Required(ErrorMessage = "Mật khẩu mới không được để trống")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Mật khẩu mới")]
-        public string NewPassword { get; set; }
-
-        [Required(ErrorMessage = "Mật khẩu xác nhận không được để trống")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Nhập lại mật khẩu mới")]
-        public string NewPasswordAgain { get; set; }
-    }
-
-    public class DashboardViewModel
-    {
-        public string DocumentId { get; set; }
-        public string CreateBy { get; set; }
-        public string StartDate { get; set; }
-        public string EndDate  { get; set; }
-        public string Reason { get; set; }
-        public string Status { get; set; }
-        public string ApproveOrRejectBy { get; set; }
-        public string ApproveOrRejectDate { get; set; }
-        public int DayOff { get; set; }
-    };
 }
