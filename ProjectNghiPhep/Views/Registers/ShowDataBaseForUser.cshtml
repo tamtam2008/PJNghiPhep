@@ -1,41 +1,130 @@
-﻿@model List<ProjectNghiPhep.Models.NHANVIEN>
-           <div class="container">
-               <table class="table table-bordered">
-                   <thead>
-                       <tr>
-                           <th>Mã nhân viên</th>
-                           <th>Họ & tên</th>
-                           <th>Giới tính</th>
-                           <th>Ngày sinh</th>
-                           <th>Địa chỉ</th>
-                           <th>Số điện thoại</th>
-                           <th>Email</th>
-                           <th>Chức vụ</th>
-                           <th>User name</th>
-                           <th>Action</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-                       @for (int i = 0; i < Model.Count(); i++)
-                       {
-                           <tr>
-                               <td>@Model[i].MaNV</td>
-                               <td>@Model[i].TenNV</td>
-                               <td>@Model[i].GioiTinh</td>
-                               <td>@Model[i].NgaySinh</td>
-                               <td>@Model[i].DiaChi</td>
-                               <td>@Model[i].SDT</td>
-                               <td>@Model[i].Email</td>
-                               <td>@Model[i].chucvu</td>
-                               <td>@Model[i].user_name</td>
+﻿@model ProjectNghiPhep.Models.User
+@using MVCGrid.Web
+@{
+    ViewBag.Title = "QuanLyNguoiDung";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-                               <td>
-                                   <a href="@Url.Action("Edit", new { id = Model[i].MaNV })"><i class="glyphicon glyphicon-edit"></i></a>
-                                   <a href="@Url.Action("Delete", new { id = Model[i].MaNV })"><i class="glyphicon glyphicon-trash"></i></a>
-                               </td>
-                            </tr>
-                       }
-                   </tbody>
-               </table>
-           </div>
+          <div class="page_header">
+    <h2>Quản Lý Người Dùng</h2>
+    <button class="btn-primary">
+        @Html.ActionLink("Tạo mới", "SetDataInDatabase", "Registers")
+    </button>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <script>
+            function onChangeTab(tabName) {
+                $('#waiting').removeClass('active');
+                $('#verify').removeClass('active');
+                $('#nguoidung').removeClass('active');
+                $('#waitingTab').hide();
+                $('#verifyTab').hide();
+                $('#nguoidungTab').hide();
+                $(tabName + 'Tab').show();
+                $(tabName).addClass('active');
+            }
+            if (!window.localStorage.getItem('token')) {
+                window.localStorage.setItem('title', '@Model.Title.code');
+                window.localStorage.setItem('token', '@Model.C_id');
+            } else {
+                var title = window.localStorage.getItem('title')
+                $('#waitingTab').hide()
+                //if (title !== 'GIAMDOC') {
+                //    setTimeout(function () {
+                //        console.log($('.btn-verify'))
+                //        $('.btn-verify').hide()
+                //        $('.btn-cancel').hide()
+                //    }, 5000)
+                //}
+            }
+        </script>
+        <ul class="nav nav-tabs">
+            <li class="active" id="waiting"><a href="#" onclick="onChangeTab('#waiting')">Người dùng chờ duyệt</a></li>
+            <li id="verify"><a href="#" onclick="onChangeTab('#verify')">Người dùng đã duyệt</a></li>
+            <li id="nguoidung"><a href="#" onclick="onChangeTab('#nguoidung')">Người dùng</a></li>
+        </ul>
+        <div id="waitingTab">
+            @Html.MVCGrid("WaitingUserGrid")
+        </div>
+        <div id="verifyTab" style="display: none">
+            @Html.MVCGrid("VerifyUserGrid")
+        </div>
+        <div id="nguoidungTab" style="display: none">
+            @Html.MVCGrid("VerifyUsersGrid")
+        </div>
+    </div>
+</div>
+@*<div class="modal" id="loginModal" style=" background-color: red">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>*@
+@*////////////////////////////////Nhấn nút VIEW////////////////////////////////*@
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+    </script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnShowModal").click(function () {
+                $("#loginModal").modal('show');
+            });
+
+            $("#btnHideModal").click(function () {
+                $("#loginModal").modal('hide');
+            });
+        });
+    </script>*@
+
+@*///////////////////////////////////////////////////////////////*@
+@*<div class="container">
+        <div class="form-group" title="Thêm mới">
+            <a href="@Url.Action("SetDataInDatabase")"><i class="glyphicon glyphicon-plus"></i></a>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Mã nhân viên</th>
+                    <th>Họ & tên</th>
+                    <th>User name</th>
+                    <th>Password</th>
+                    <th>Giới tính</th>
+                    <th>Ngày sinh</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    <tr>
+                        <td>@Model[i].C_id</td>
+                        <td>@Model[i].fullName</td>
+                        <td>@Model[i].username</td>
+                        <td>@Model[i].password</td>
+                        <td>@Model[i].gender</td>
+                        <td>@Model[i].dateOfBirth</td>
+                        <td>@Model[i].email</td>
+                        <td>@Model[i].mobile</td>
+                        <td>@Model[i].address</td>
+
+                        <td>
+                            <a href="@Url.Action("Edit", new { id = Model[i].C_id })"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a href="@Url.Action("Delete", new { id = Model[i].C_id })"><i class="glyphicon glyphicon-trash"></i></a>
+                        </td>
+                     </tr>
+                }
+            </tbody>
+        </table>
+    </div>*@
 

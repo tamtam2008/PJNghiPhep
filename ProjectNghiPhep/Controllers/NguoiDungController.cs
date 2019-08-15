@@ -15,13 +15,68 @@ namespace ProjectNghiPhep.Controllers
     {
         //
         // GET: /DonNghiPhep/
-
+           
         public ActionResult Index()
         {
             return View();
         }
 
         public ActionResult Edit(string id)
+        {
+            var result = new QueryResult<User>();
+            NghiphepEntities db = new NghiphepEntities();
+            // Query your data here. Obey Ordering, paging and filtering parameters given in the context.QueryOptions.
+            // Use Entity Framework, a module from your IoC Container, or any other method.
+            // Return QueryResult object containing IEnumerable<YouModelItem>
+            var query = (from user in db.Users
+                         join contract in db.ContractTypes
+                         on user.contractId equals contract.C_id
+                         where user.C_id == id
+                         select new
+                         {
+                             C_id = user.C_id,
+                             username = user.username,
+                             dayOff = user.dayOff,
+                             contractId = user.contractId,
+                             createdAt = user.createdAt,
+                             ContractType = contract,
+                             fullName = user.fullName,
+                             email = user.email,
+                             mobile = user.mobile
+                         });
+            var user_result = query.ToList().Select(r => new User
+            {
+                C_id = r.C_id,
+                username = r.username,
+                fullName = r.fullName,
+                dayOff = r.dayOff,
+                createdAt = r.createdAt,
+                contractId = r.ContractType.name,
+                ContractType = r.ContractType,
+                email = r.email,
+                mobile = r.mobile
+            }).ToList()[0];
+
+            var contract_query = (from contract in db.ContractTypes
+                         select new
+                         {
+                             C_id = contract.C_id,
+                             code = contract.code,
+                             name = contract.name,
+                             dayOff = contract.dayOff
+                         });
+            var contracts = contract_query.ToList().Select(c => new ContractType
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name,
+                dayOff = c.dayOff
+            }).ToList();
+            ViewData["contracts"] = contracts; 
+            return View(user_result);
+        }
+
+        public ActionResult Profile(string id)
         {
             var result = new QueryResult<User>();
             NghiphepEntities db = new NghiphepEntities();
@@ -88,7 +143,7 @@ namespace ProjectNghiPhep.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult SaveUser(User user)
+        public ActionResult SaveUser (User user)
         {
             NghiphepEntities db = new NghiphepEntities();
             var result = db.Users.SingleOrDefault(b => b.username == user.username);
@@ -104,6 +159,7 @@ namespace ProjectNghiPhep.Controllers
             }
             return RedirectToAction("Edit/" + result.C_id);
         }
+
         //Gọi form thêm người dùng
         public ActionResult CreateUser()
         {
@@ -169,6 +225,45 @@ namespace ProjectNghiPhep.Controllers
                 return RedirectToAction("Index");
             }
         }
-        
+
+
+        //Đổi mật khẩu
+        [AllowAnonymous]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult ChangePassword(ChangePasswordViewModel model)
+        {
+            //validate
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            //validate
+            if (model.NewPassword != model.NewPasswordAgain)
+            {
+                ModelState.AddModelError("", "Mật khẩu mới được nhập lại không khớp.");
+                return View(model);
+            }
+            //Đổi trong database
+            using (NghiphepEntities db = new NghiphepEntities())
+            {
+                var user = db.Users.SingleOrDefault(x => x.username == User.Identity.Name && x.password == model.CurrentPassword);
+                if (user != null)
+                {
+                    user.password = model.NewPassword;
+                    db.SaveChanges();
+                    ViewBag.MessageSuccess = "Mật khẩu đã được đổi thành công.";
+                    return View(model);
+                }
+                ModelState.AddModelError("", "Mật khẩu không đúng.");
+                return View(model);
+            }
+        }
     }
 }
+
