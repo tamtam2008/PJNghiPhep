@@ -184,7 +184,7 @@ namespace ProjectNghiPhep.Controllers
                 //    }
                 //}
                 //write code to update student 
-                //Gửi mail khi tạo đơn, tương tự bên dưới(CancelDocument)
+                //Gửi mail khi tạo đơn, tương tự bên dưới luôn (CancelDocument)
                 string mailBody = "Xin chào: " + user.fullName + "<br>"
                                 + "Thông tin đơn nghỉ phép của bạn đang chờ duyệt: <br>"
                                 + "- Từ ngày: " + dnp.dateStart + "<br>"
@@ -290,7 +290,7 @@ namespace ProjectNghiPhep.Controllers
                 var start = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(result.startDate) / 1000d)).ToLocalTime().ToString();
                 var end = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(result.endDate) / 1000d)).ToLocalTime().ToString();
                 var user = db.Users.SingleOrDefault(b => b.C_id == result.createdById);
-                //Tạo nội dung email, 1 chuỗi dạng html hay string thường đều được
+                //Tạo nội dung email, nó là 1 chuỗi dạng html hay string thường đều được
                 string mailBody = "Xin chào: " + user.fullName + "<br><br>"
                                     + "Đơn nghỉ phép của bạn không được duyệt" + "<br>"
                                     + "- Mã đơn: " + result.C_id + "<br>"
@@ -303,7 +303,7 @@ namespace ProjectNghiPhep.Controllers
                 var mail = new MailModel
                 {
                     //Danh sách địa chỉ nhận mail,nếu muốn gửi nhiều email cùng lúc thì thêm dô list này
-                    //Chỉ gửi cho email người tạo đơn
+                    //Ở đây chỉ gửi cho email người tạo đơn
                     ListToEmail = new List<string> { user.email },
                     //Nội dung email
                     Body = mailBody,
