@@ -760,3 +760,7 @@ tr.pager td {
     justify-content: space-between;
     flex-direction: row;
 }
+
+.selectbox {
+    width: 300px!important;
+}
