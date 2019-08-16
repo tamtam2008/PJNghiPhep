@@ -16,7 +16,7 @@ namespace ProjectNghiPhep
 
             routes.MapRoute(
                 name: "Default", // Route name  
-                url: "{controller}/{action}/{id}.cshtml", // URL with parameters  
+                url: "{controller}/{action}/{id}", // URL with parameters  
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults  
             );
         }
