@@ -7,9 +7,6 @@
 
 <div class="page_header">
     <h2>Đơn Nghỉ Phép</h2>
-    <button class="btn-primary">
-        @Html.ActionLink("Tạo mới", "CreateNew", "DonNghiPhep")
-    </button>
 </div>
 <div class="panel panel-default">
     <div class="panel-body">
@@ -27,6 +24,7 @@
             if (!window.localStorage.getItem('token')) {
                 window.localStorage.setItem('title', '@Model.Title.code');
                 window.localStorage.setItem('token', '@Model.C_id');
+                window.localStorage.setItem('username', '@Model.username');
             } else {
                 var title = window.localStorage.getItem('title')
                 $('#waitingTab').hide()
