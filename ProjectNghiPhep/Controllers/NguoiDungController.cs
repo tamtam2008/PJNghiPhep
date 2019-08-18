@@ -224,6 +224,45 @@ namespace ProjectNghiPhep.Controllers
                 //Lưu thành công thì chuyển đến tran index
                 return RedirectToAction("Index");
             }
-        } 
+        }
+
+        [AllowAnonymous]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult ChangePassword(ChangePasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            if (model.NewPassword != model.NewPasswordAgain)
+            {
+                ModelState.AddModelError("", "Mật khẩu mới được nhập lại không khớp.");
+                return View(model);
+            }
+
+            using (NghiphepEntities db = new NghiphepEntities())
+            {
+                if (User != null && User.Identity != null && !string.IsNullOrEmpty(User.Identity.Name)) {
+                    model.Username = User.Identity.Name;
+                }
+                var user = db.Users.SingleOrDefault(x => x.username == model.Username  && x.password == model.CurrentPassword);
+                if (user != null)
+                {
+                    user.password = model.NewPassword;
+                    db.SaveChanges();
+                    ViewBag.MessageSuccess = "Mật khẩu đã được đổi thành công.";
+                    return View(model);
+                }
+                ModelState.AddModelError("", "Mật khẩu không đúng.");
+                return View(model);
+            }
+        }
     }
 }

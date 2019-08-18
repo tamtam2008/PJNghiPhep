@@ -17,7 +17,7 @@
             <script src='@Url.Content("~/Scripts/jquery.validate.js")' type='text/javascript'></script>
             <script src='@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")' type='text/javascript'></script>
             <script>
-                function linkTo() {
+                function linkTo1() {
                     var title = localStorage.getItem('title')
                     var id = localStorage.getItem('token')
                     if (id) {
@@ -28,6 +28,20 @@
                         }
                     } else {
                         window.location.replace('/sep22t9/Account/Login')
+                    }
+                    return false;
+                }
+                function linkTo() {
+                    var title = localStorage.getItem('title')
+                    var id = localStorage.getItem('token')
+                    if (id) {
+                        if (title === 'GIAMDOC') {
+                            window.location.replace('/DonNghiPhep/Manager/' + id)
+                        } else {
+                            window.location.replace('/DonNghiPhep/Employee/' + id)
+                        }
+                    } else {
+                        window.location.replace('/Account/Login')
                     }
                     return false;
                 }
@@ -66,13 +80,13 @@
                 @RenderBody()
             </section>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+        <!--<footer>
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                    </div>
                 </div>
-            </div>
-        </footer>
+            </footer>-->
         @Scripts.Render("~/MVCGridHandler.axd/script.js")
         @RenderSection("scripts", required: false)
     </body>

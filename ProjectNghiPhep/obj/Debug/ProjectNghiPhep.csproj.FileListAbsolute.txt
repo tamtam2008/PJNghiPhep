@@ -453,3 +453,446 @@ C:\Users\Tam\Downloads\PJNghiPhep\ProjectNghiPhep\bin\zh-Hant\System.Spatial.res
 C:\Users\Tam\Downloads\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.dll
 C:\Users\Tam\Downloads\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.pdb
 C:\Users\Tam\Downloads\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csprojResolveAssemblyReference.cache
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ProjectNghiPhep.dll.config
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ProjectNghiPhep.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ProjectNghiPhep.pdb
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Antlr3.Runtime.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.Core.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\EntityFramework.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\EntityFramework.SqlServer.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Data.Edm.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Data.OData.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\MVCGrid.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Newtonsoft.Json.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Net.Http.Formatting.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Spatial.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Helpers.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.OData.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.WebHost.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Mvc.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Optimization.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Razor.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.Razor.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\WebActivatorEx.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\WebGrease.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\WebMatrix.WebData.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\EntityFramework.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\EntityFramework.SqlServer.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\MVCGrid.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Newtonsoft.Json.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Net.Http.Formatting.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Helpers.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.WebHost.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Mvc.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Razor.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.Razor.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\WebMatrix.Data.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\WebMatrix.WebData.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.Core.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.OData.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Data.Edm.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Data.OData.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\System.Spatial.xml
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\de\System.Spatial.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\es\System.Spatial.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\fr\System.Spatial.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\it\System.Spatial.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ja\System.Spatial.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ko\System.Spatial.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\ru\System.Spatial.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csprojResolveAssemblyReference.cache
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csproj.CoreCompileInputs.cache
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.dll
+C:\Users\Tuan Kha\Downloads\PJNghiPhep-master\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.pdb
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ProjectNghiPhep.dll.config
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ProjectNghiPhep.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ProjectNghiPhep.pdb
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Antlr3.Runtime.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.AspNet.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.Core.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\EntityFramework.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\EntityFramework.SqlServer.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Data.Edm.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Data.OData.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Web.Infrastructure.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\MVCGrid.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Newtonsoft.Json.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Net.Http.Formatting.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Spatial.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Helpers.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.OData.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.WebHost.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Mvc.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Optimization.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Razor.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.Deployment.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.Razor.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\WebActivatorEx.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\WebGrease.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\WebMatrix.WebData.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\EntityFramework.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\EntityFramework.SqlServer.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\MVCGrid.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Newtonsoft.Json.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Net.Http.Formatting.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Helpers.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.WebHost.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Mvc.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Razor.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.Deployment.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.WebPages.Razor.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\WebMatrix.Data.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\WebMatrix.WebData.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.AspNet.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.Core.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Web.Http.OData.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Data.Edm.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\Microsoft.Data.OData.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\System.Spatial.xml
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\de\Microsoft.Data.Edm.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\es\Microsoft.Data.Edm.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\it\Microsoft.Data.Edm.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\de\Microsoft.Data.OData.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\es\Microsoft.Data.OData.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\fr\Microsoft.Data.OData.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\it\Microsoft.Data.OData.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ja\Microsoft.Data.OData.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ko\Microsoft.Data.OData.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ru\Microsoft.Data.OData.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\de\System.Spatial.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\es\System.Spatial.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\fr\System.Spatial.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\it\System.Spatial.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ja\System.Spatial.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ko\System.Spatial.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\ru\System.Spatial.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hans\System.Spatial.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\bin\zh-Hant\System.Spatial.resources.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csprojResolveAssemblyReference.cache
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csproj.CoreCompileInputs.cache
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.dll
+D:\freelance\PJNghiPhep-master\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.pdb
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ProjectNghiPhep.dll.config
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ProjectNghiPhep.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ProjectNghiPhep.pdb
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Antlr3.Runtime.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.Core.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\EntityFramework.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\EntityFramework.SqlServer.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Microsoft.Data.Edm.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Microsoft.Data.OData.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\MVCGrid.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Newtonsoft.Json.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Net.Http.Formatting.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Spatial.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Helpers.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Http.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Http.OData.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Http.WebHost.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Mvc.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Optimization.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Razor.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.WebPages.Deployment.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.WebPages.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.WebPages.Razor.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\WebActivatorEx.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\WebGrease.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\WebMatrix.WebData.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\EntityFramework.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\EntityFramework.SqlServer.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\MVCGrid.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Newtonsoft.Json.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Net.Http.Formatting.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Helpers.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Http.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Http.WebHost.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Mvc.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Razor.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.WebPages.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.WebPages.Deployment.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.WebPages.Razor.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\WebMatrix.WebData.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.Core.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Web.Http.OData.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Microsoft.Data.Edm.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\Microsoft.Data.OData.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\System.Spatial.xml
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\de\System.Spatial.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\es\System.Spatial.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\fr\System.Spatial.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\it\System.Spatial.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ja\System.Spatial.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ko\System.Spatial.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\ru\System.Spatial.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csproj.CoreCompileInputs.cache
+C:\Users\USER\Downloads\test\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csproj.CopyComplete
+C:\Users\USER\Downloads\test\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.dll
+C:\Users\USER\Downloads\test\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.pdb
+C:\Users\USER\Downloads\test\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csprojAssemblyReference.cache
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ProjectNghiPhep.dll.config
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ProjectNghiPhep.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ProjectNghiPhep.pdb
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Antlr3.Runtime.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.Core.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\EntityFramework.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\EntityFramework.SqlServer.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Microsoft.Data.Edm.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Microsoft.Data.OData.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\MVCGrid.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Newtonsoft.Json.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Spatial.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.Helpers.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.Http.OData.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.Mvc.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.Optimization.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.Razor.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.WebPages.Deployment.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.WebPages.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.WebPages.Razor.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\WebActivatorEx.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\WebGrease.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\WebMatrix.Data.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\WebMatrix.WebData.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\EntityFramework.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\EntityFramework.SqlServer.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\MVCGrid.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Newtonsoft.Json.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.Helpers.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.Mvc.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.Razor.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.WebPages.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.WebPages.Deployment.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.WebPages.Razor.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\WebMatrix.Data.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\WebMatrix.WebData.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.Core.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Web.Http.OData.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Microsoft.Data.Edm.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\Microsoft.Data.OData.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\System.Spatial.xml
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\de\System.Spatial.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\es\System.Spatial.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\fr\System.Spatial.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\it\System.Spatial.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ja\System.Spatial.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ko\System.Spatial.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\ru\System.Spatial.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csprojResolveAssemblyReference.cache
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.dll
+C:\Users\User\Downloads\DoTrang\DoTrang\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.pdb
+D:\PJNghiPhep\ProjectNghiPhep\bin\ProjectNghiPhep.dll.config
+D:\PJNghiPhep\ProjectNghiPhep\bin\ProjectNghiPhep.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\ProjectNghiPhep.pdb
+D:\PJNghiPhep\ProjectNghiPhep\bin\Antlr3.Runtime.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.AspNet.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.Core.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\EntityFramework.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\EntityFramework.SqlServer.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\Microsoft.Data.Edm.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\Microsoft.Data.OData.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\Microsoft.Web.Infrastructure.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\MVCGrid.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\Newtonsoft.Json.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Spatial.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.Helpers.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.Http.OData.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.Mvc.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.Optimization.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.Razor.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.WebPages.Deployment.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.WebPages.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.WebPages.Razor.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\WebActivatorEx.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\WebGrease.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\WebMatrix.Data.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\WebMatrix.WebData.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\EntityFramework.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\EntityFramework.SqlServer.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\MVCGrid.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\Newtonsoft.Json.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.Helpers.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.Mvc.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.Razor.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.WebPages.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.WebPages.Deployment.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.WebPages.Razor.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\WebMatrix.Data.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\WebMatrix.WebData.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.AspNet.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.Core.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.OAuth.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Web.Http.OData.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\Microsoft.Data.Edm.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\Microsoft.Data.OData.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\System.Spatial.xml
+D:\PJNghiPhep\ProjectNghiPhep\bin\de\Microsoft.Data.Edm.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\es\Microsoft.Data.Edm.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\it\Microsoft.Data.Edm.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\de\Microsoft.Data.OData.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\es\Microsoft.Data.OData.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\fr\Microsoft.Data.OData.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\it\Microsoft.Data.OData.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\ja\Microsoft.Data.OData.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\ko\Microsoft.Data.OData.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\ru\Microsoft.Data.OData.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\de\System.Spatial.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\es\System.Spatial.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\fr\System.Spatial.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\it\System.Spatial.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\ja\System.Spatial.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\ko\System.Spatial.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\ru\System.Spatial.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\zh-Hans\System.Spatial.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\bin\zh-Hant\System.Spatial.resources.dll
+D:\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csprojResolveAssemblyReference.cache
+D:\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.dll
+D:\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.pdb
