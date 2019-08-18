@@ -17,6 +17,20 @@
             <script src='@Url.Content("~/Scripts/jquery.validate.js")' type='text/javascript'></script>
             <script src='@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")' type='text/javascript'></script>
             <script>
+                function linkTo1() {
+                    var title = localStorage.getItem('title')
+                    var id = localStorage.getItem('token')
+                    if (id) {
+                        if (title === 'GIAMDOC') {
+                            window.location.replace('/sep22t9/DonNghiPhep/Manager/' + id)
+                        } else {
+                            window.location.replace('/sep22t9/DonNghiPhep/Employee/' + id)
+                        }
+                    } else {
+                        window.location.replace('/sep22t9/Account/Login')
+                    }
+                    return false;
+                }
                 function linkTo() {
                     var title = localStorage.getItem('title')
                     var id = localStorage.getItem('token')
@@ -44,7 +58,7 @@
             </script>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("Văn Lang University", "Index", "Home")</p>
+                    <p class="site-title" onclick="window.location.replace('/sep22t9')"></p>
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -66,13 +80,13 @@
                 @RenderBody()
             </section>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+        <!--<footer>
+                <div class="content-wrapper">
+                    <div class="float-left">
+                        <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                    </div>
                 </div>
-            </div>
-        </footer>
+            </footer>-->
         @Scripts.Render("~/MVCGridHandler.axd/script.js")
         @RenderSection("scripts", required: false)
     </body>

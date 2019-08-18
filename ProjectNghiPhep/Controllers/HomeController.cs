@@ -16,12 +16,12 @@ namespace ProjectNghiPhep.Controllers
             //Lấy dữ liệu đơn nghỉ phép để hiển thị ra dashbord
             using (NghiphepEntities db = new NghiphepEntities())
             {
-                
                 var result = from u in db.Users
                              join d in db.Documents
                              on u.C_id equals d.createdById
                              select new
                              {
+                                 Name = u.fullName,
                                  DocumentId = d.C_id,
                                  CreateBy = u.fullName,
                                  StartDate = d.startDate,
@@ -45,9 +45,12 @@ namespace ProjectNghiPhep.Controllers
                         Status = item.Status == 0 ? "Chờ duyệt" : item.Status == 99 ? "Đã duyệt" : "Đã hủy",
                         ApproveOrRejectBy = item.ApproveOrRejectBy,
                         ApproveOrRejectDate = item.ApproveOrRejectDate.HasValue ? convertDoubleToDatetime(item.ApproveOrRejectDate.Value) : "",
-                        DayOff = item.DayOff.HasValue ? item.DayOff.Value : 0
-
+                        DayOff = item.DayOff.HasValue ? item.DayOff.Value : 0,
                     };
+                    //Lấy số ngày phép được duyệt theo user
+                    var totalDayOfApproved = result.Where(x => x.Name.ToUpper() == item.CreateBy.ToUpper() && x.Status == 99).Count();
+                    //Tổng số ngày phép được cấp = Tổng số ngày phép còn lại + số ngày được duyệt (Do database thiết kế không có lưu số ngày phép được cấp ban đầu) 
+                    r.TotalDay = r.DayOff + totalDayOfApproved;
                     listData.Add(r);
                 }
                 return View(listData);
