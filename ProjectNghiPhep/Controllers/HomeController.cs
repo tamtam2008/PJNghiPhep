@@ -16,9 +16,11 @@ namespace ProjectNghiPhep.Controllers
             //Lấy dữ liệu đơn nghỉ phép để hiển thị ra dashbord
             using (NghiphepEntities db = new NghiphepEntities())
             {
+                var user = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
                 var result = from u in db.Users
                              join d in db.Documents
                              on u.C_id equals d.createdById
+                             where user.titleId == "TITLE_001" || (user.titleId == "TITLE_002" && d.createdById == user.C_id) //phân biệt dữ liệu là của nv hay admin
                              select new
                              {
                                  Name = u.fullName,
@@ -53,7 +55,7 @@ namespace ProjectNghiPhep.Controllers
                     r.TotalDay = r.DayOff + totalDayOfApproved;
                     listData.Add(r);
                 }
-                return View(listData);
+                return View(listData);//đổ dữ liệu ra view
             }
         }
 
