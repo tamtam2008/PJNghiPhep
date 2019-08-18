@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity.Validation;
 
 namespace ProjectNghiPhep.Controllers
 {
@@ -12,12 +13,12 @@ namespace ProjectNghiPhep.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-            System.Diagnostics.Debug.WriteLine("CreateLeaveForm CreateLeaveForm CreateLeaveForm ", User.Identity);
+
             //Lấy dữ liệu đơn nghỉ phép để hiển thị ra dashbord
             using (NghiphepEntities db = new NghiphepEntities())
             {
                 
+                var user = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
                 var result = from u in db.Users
                              join d in db.Documents
                              on u.C_id equals d.createdById
@@ -33,6 +34,25 @@ namespace ProjectNghiPhep.Controllers
                                  ApproveOrRejectDate = d.verifiedAt,
                                  DayOff = u.dayOff
                              };
+                if (user.titleId == "TITLE_001")
+                {
+                    result = from u in db.Users
+                             join d in db.Documents
+                             on u.C_id equals d.createdById
+                             where d.createdById == user.C_id
+                             select new
+                             {
+                                 DocumentId = d.C_id,
+                                 CreateBy = u.fullName,
+                                 StartDate = d.startDate,
+                                 EndDate = d.endDate,
+                                 Status = d.status,
+                                 Reason = d.reason,
+                                 ApproveOrRejectBy = d.verifiedById,
+                                 ApproveOrRejectDate = d.verifiedAt,
+                                 DayOff = u.dayOff
+                             };
+                }
                 var listData = new List<DashboardViewModel>();
                 foreach (var item in result)
                 {
