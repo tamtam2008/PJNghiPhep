@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using MVCGrid.Models;
 using MVCGrid.Web;
 using ProjectNghiPhep.Models;
+using ProjectNghiPhep.Models.ViewModels;
+using System.IO;
 
 namespace ProjectNghiPhep.Controllers
 {
@@ -141,13 +143,22 @@ namespace ProjectNghiPhep.Controllers
             }
             return RedirectToAction("Index");
         }
-
-        public ActionResult SaveUser (User user)
+        [HttpPost]
+        public ActionResult SaveUser (HttpPostedFileBase file,User user)
         {
             NghiphepEntities db = new NghiphepEntities();
             var result = db.Users.SingleOrDefault(b => b.username == user.username);
             if (result != null)
             {
+                if (file != null && file.ContentLength > 0)
+                {
+
+                    string filename = Path.GetFileName(file.FileName);
+                        string _filename = DateTime.Now.ToString("yymmssfff") + filename;
+                        string extension = Path.GetExtension(file.FileName);
+                        string path = Path.Combine(Server.MapPath("~/Images/"), _filename);
+                        file.SaveAs(path);
+                }
                 result.username = user.username;
                 result.fullName = user.fullName;
                 result.email = user.email;
@@ -158,6 +169,71 @@ namespace ProjectNghiPhep.Controllers
             }
             return RedirectToAction("Edit/" + result.C_id);
         }
-         
+
+        //Gọi form thêm người dùng
+        public ActionResult CreateUser()
+        {
+            return View();
+        }
+        //Tạo người dùng từ thông tin đc post lên
+        //Nhớ thêm email đúng để nhận đc mail
+        [HttpPost]
+        public ActionResult CreateUser(UserViewModel user)
+        {
+            //Validate dữ liệu, nếu chưa đúng thì nhập lại
+            if (!ModelState.IsValid)
+            {
+                return View(user);
+            }
+            using (NghiphepEntities db = new NghiphepEntities())
+            {
+                //Nếu id đã tồn tại thì báo lỗi id đã tồn tại
+                var use = db.Users.FirstOrDefault(x => x.C_id == user.C_id);
+                if (use != null)
+                {
+                    ModelState.AddModelError("", "ID đã tồn tại");
+                    return View(user);
+                }
+                var use1 = db.Users.FirstOrDefault(x => x.username == user.username);
+                if (use1 != null)
+                {
+                    //Nếu username đã tồn tại thì báo lỗi username đã tồn tại
+                    ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
+                    return View(user);
+                }
+                //Tạo model user từ thông tin đã nhập để them vào database
+                var newUser = new User
+                {
+                    C_id = user.C_id,
+                    username = user.username,
+                    address = user.address,
+                    contractId = user.contractId,
+                    email = user.email,
+                    gender = user.gender,
+                    fullName = user.fullName,
+                    isActive = true,
+                    dayOff = user.dayOff,
+                    password = user.password,
+                    mobile = user.mobile,
+                    titleId = user.titleId,
+                    departmentId = user.departmentId,
+                    dateOfBirth = user.dateOfBirth,
+
+                };
+                try
+                {
+                    db.Users.Add(newUser);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    //Lưu thất bại báo lỗi (khi không kết nối đc database)
+                    ModelState.AddModelError("", "Lỗi hệ thống");
+                    return View(user);
+                }
+                //Lưu thành công thì chuyển đến tran index
+                return RedirectToAction("Index");
+            }
+        } 
     }
 }

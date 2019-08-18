@@ -18,6 +18,7 @@ namespace ProjectNghiPhep.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.Web;
     
     public partial class User
     {
@@ -54,6 +55,7 @@ namespace ProjectNghiPhep.Models
         public Nullable<double> dateOfBirth { get; set; }
         public string email { get; set; }
         public string mobile { get; set; }
+        public HttpPostedFileBase file { get; set; }
     
         public virtual ContractType ContractType { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
