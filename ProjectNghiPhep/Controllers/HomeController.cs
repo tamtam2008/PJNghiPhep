@@ -13,6 +13,7 @@ namespace ProjectNghiPhep.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            System.Diagnostics.Debug.WriteLine("CreateLeaveForm CreateLeaveForm CreateLeaveForm ", User.Identity);
             //Lấy dữ liệu đơn nghỉ phép để hiển thị ra dashbord
             using (NghiphepEntities db = new NghiphepEntities())
             {
