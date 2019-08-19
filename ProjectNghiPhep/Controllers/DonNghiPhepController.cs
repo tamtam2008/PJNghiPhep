@@ -22,7 +22,6 @@ namespace ProjectNghiPhep.Controllers
                 var query = (from user in db.Users
                              join title in db.Titles
                              on user.titleId equals title.C_id
-                             where user.C_id == id
                              select new
                              {
                                  C_id = user.C_id,
@@ -55,10 +54,11 @@ namespace ProjectNghiPhep.Controllers
             if (id != null)
             {
                 NghiphepEntities db = new NghiphepEntities();
+                var u = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
                 var query = (from user in db.Users
                              join title in db.Titles
                              on user.titleId equals title.C_id
-                             where user.C_id == id
+                             where user.C_id == u.C_id
                              select new
                              {
                                  C_id = user.C_id,

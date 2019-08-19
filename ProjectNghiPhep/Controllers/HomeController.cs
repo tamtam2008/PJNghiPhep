@@ -34,7 +34,7 @@ namespace ProjectNghiPhep.Controllers
                                  ApproveOrRejectDate = d.verifiedAt,
                                  DayOff = u.dayOff
                              };
-                if (user.titleId == "TITLE_001")
+                if (user.titleId != "TITLE_001")
                 {
                     result = from u in db.Users
                              join d in db.Documents

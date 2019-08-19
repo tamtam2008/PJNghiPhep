@@ -178,3 +178,4 @@ C:\Users\sangh\Documents\PJNghiPhep\ProjectNghiPhep\bin\zh-Hans\System.Spatial.r
 C:\Users\sangh\Documents\PJNghiPhep\ProjectNghiPhep\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\sangh\Documents\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.dll
 C:\Users\sangh\Documents\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.pdb
+C:\Users\sangh\Documents\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csprojResolveAssemblyReference.cache
