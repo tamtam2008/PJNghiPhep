@@ -1,0 +1,29 @@
+﻿<script>
+    $(document).ready(function linkTo() {
+        console.log('link to link to')
+        var token = localStorage.getItem('token');
+        var username = localStorage.getItem('username');
+        if (token) {
+            $('#username_info').show();
+            $('#login_button').hide();
+            $('#username_info').first().text('Hello ' + username);
+            $("#logout_button").show();
+        } else {
+            $('#username_info').hide();
+            $('#login_button').show();
+            $("#logout_button").hide();
+        }
+    })
+</script>
+<div style="display: flexbox; justify-content: flex-start; flex-direction: row;">
+    <button class="btn btn-link" id="username_info" style="font-weight: bold;" onclick="window.location.replace('/NguoiDung/Edit/' + localStorage.getItem('token'));">
+    </button>
+    &nbsp;
+    <!--Bấm đăng xuất gọi đến /Account/Logout -->
+    <button id="logout_button" class="btn btn-default" onclick="window.localStorage.clear(); window.location.replace('/Account/Logout');">
+        Đăng xuất
+    </button>
+</div>
+<ul id="login_button">
+    <li>@Html.ActionLink("Đăng nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+</ul>

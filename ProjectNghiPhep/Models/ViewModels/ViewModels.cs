@@ -45,6 +45,7 @@ namespace ProjectNghiPhep.Models.ViewModels
     
     public class ChangePasswordViewModel
     {
+        public string Username { get; set; }
         [Required(ErrorMessage = "Mật khẩu hiện tại không được để trống")]
         [DataType(DataType.Password)]
         [Display(Name = "Mật khẩu hiện tại")]
@@ -72,5 +73,6 @@ namespace ProjectNghiPhep.Models.ViewModels
         public string ApproveOrRejectBy { get; set; }
         public string ApproveOrRejectDate { get; set; }
         public int DayOff { get; set; }
+        public int TotalDay { get; set; }
     };
 }

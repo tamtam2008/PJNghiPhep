@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Data.Entity.Validation;
 
 namespace ProjectNghiPhep.Controllers
 {
@@ -13,17 +12,18 @@ namespace ProjectNghiPhep.Controllers
     {
         public ActionResult Index()
         {
-
+            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
             //Lấy dữ liệu đơn nghỉ phép để hiển thị ra dashbord
             using (NghiphepEntities db = new NghiphepEntities())
             {
-                
                 var user = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
                 var result = from u in db.Users
                              join d in db.Documents
                              on u.C_id equals d.createdById
+                             where user.titleId == "TITLE_001" || (user.titleId == "TITLE_002" && d.createdById == user.C_id )
                              select new
                              {
+                                 Name = u.fullName,
                                  DocumentId = d.C_id,
                                  CreateBy = u.fullName,
                                  StartDate = d.startDate,
@@ -34,25 +34,6 @@ namespace ProjectNghiPhep.Controllers
                                  ApproveOrRejectDate = d.verifiedAt,
                                  DayOff = u.dayOff
                              };
-                if (user != null && user.titleId != "TITLE_001")
-                {
-                    result = from u in db.Users
-                             join d in db.Documents
-                             on u.C_id equals d.createdById
-                             where d.createdById == user.C_id
-                             select new
-                             {
-                                 DocumentId = d.C_id,
-                                 CreateBy = u.fullName,
-                                 StartDate = d.startDate,
-                                 EndDate = d.endDate,
-                                 Status = d.status,
-                                 Reason = d.reason,
-                                 ApproveOrRejectBy = d.verifiedById,
-                                 ApproveOrRejectDate = d.verifiedAt,
-                                 DayOff = u.dayOff
-                             };
-                }
                 var listData = new List<DashboardViewModel>();
                 foreach (var item in result)
                 {
@@ -66,9 +47,12 @@ namespace ProjectNghiPhep.Controllers
                         Status = item.Status == 0 ? "Chờ duyệt" : item.Status == 99 ? "Đã duyệt" : "Đã hủy",
                         ApproveOrRejectBy = item.ApproveOrRejectBy,
                         ApproveOrRejectDate = item.ApproveOrRejectDate.HasValue ? convertDoubleToDatetime(item.ApproveOrRejectDate.Value) : "",
-                        DayOff = item.DayOff.HasValue ? item.DayOff.Value : 0
-
+                        DayOff = item.DayOff.HasValue ? item.DayOff.Value : 0,
                     };
+                    //Lấy số ngày phép được duyệt theo user
+                    var totalDayOfApproved = result.Where(x => x.Name.ToUpper() == item.CreateBy.ToUpper() && x.Status == 99).Count();
+                    //Tổng số ngày phép được cấp = Tổng số ngày phép còn lại + số ngày được duyệt (Do database thiết kế không có lưu số ngày phép được cấp ban đầu) 
+                    r.TotalDay = r.DayOff + totalDayOfApproved;
                     listData.Add(r);
                 }
                 return View(listData);

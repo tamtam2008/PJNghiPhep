@@ -1,0 +1,69 @@
+﻿@model ProjectNghiPhep.Models.User
+           
+           @using (Html.BeginForm())
+           {
+              <div class="container">
+                  <div class="form-group">
+                      <label>Mã nhân viên</label>
+                      @Html.TextBoxFor(x => x.C_id, new { @class = "form-control" })
+                  </div> 
+                  <div class="form-group">
+                      <label>Họ & tên</label>
+                      @Html.TextBoxFor(x => x.fullName, new { @class = "form-control" })
+                  </div> 
+                  <div class="form-group">
+                      <label>User name</label>
+                      @Html.TextBoxFor(x => x.username, new { @class = "form-control" })
+                  </div> 
+                  <div class="form-group">
+                      <label>Mật khẩu</label>
+                      @Html.TextBoxFor(x => x.password, new { @class = "form-control" })
+                  </div> 
+                  <div class="form-group">
+                      <label>Ngày sinh</label>
+                      @Html.TextBoxFor(x => x.dateOfBirth, new { @class = "form-control" })
+                  </div>
+                  <div class="form-group">
+                      <label>Giới tính</label>
+                      @Html.TextBoxFor(x => x.gender, new { @class = "form-control" })
+                  </div>
+                  <div class="form-group">
+                      <label>Số điện thoại</label>
+                      @Html.TextBoxFor(x => x.mobile, new { @class = "form-control" })
+                  </div>
+                  <div class="form-group">
+                      <label>Email</label>
+                      @Html.TextBoxFor(x => x.email, new { @class = "form-control" })
+                  </div>
+                  <div class="form-group">
+                      <label>Địa chỉ</label>
+                      @Html.TextBoxFor(x => x.address, new { @class = "form-control" })
+                  </div>
+
+                  @*<div class="form-group">
+                      <input type="checkbox" id="1" />
+                      <label>Ban chủ nhiệm khoa</label>  
+                  </div>
+                  <div class="form-group">
+                      <input type="checkbox" id="2" />
+                      <label>Quản trị viên</label>
+                 </div>
+                  <div class="form-group">
+                      <input type="checkbox" id="3" />
+                      <label>Nhân viên</label>
+                  </div>*@
+                  <div class="form-group">
+                      <label>Phân quyền</label>
+                    <i class="glyphicon glyphicon-edit">
+                        @Html.ActionLink("Phân quyền", "PhanQuyen", "Registers")
+                    </i>
+                  </div>
+
+                  
+
+                  <div class="button">
+                      <button>Lưu</button>
+                  </div>
+              </div> 
+           }
+

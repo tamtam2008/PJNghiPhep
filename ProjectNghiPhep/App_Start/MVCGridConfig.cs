@@ -205,7 +205,6 @@ namespace ProjectNghiPhep
                 {
                     var result = new QueryResult<Document>();
                     NghiphepEntities db = new NghiphepEntities();
-                    var u = db.Users.FirstOrDefault(x => x.username == System.Web.HttpContext.Current.User.Identity.Name);
                     // Query your data here. Obey Ordering, paging and filtering parameters given in the context.QueryOptions.
                     // Use Entity Framework, a module from your IoC Container, or any other method.
                     // Return QueryResult object containing IEnumerable<YouModelItem>
@@ -213,7 +212,7 @@ namespace ProjectNghiPhep
                     var query = (from doc in db.Documents
                                  join user in db.Users
                                  on doc.createdById equals user.C_id
-                                 where doc.status == 0 && doc.createdById == u.C_id
+                                 where doc.status == 0
                                  select new
                                  {
                                      C_id = doc.C_id,
@@ -315,7 +314,6 @@ namespace ProjectNghiPhep
                 {
                     var result = new QueryResult<Document>();
                     NghiphepEntities db = new NghiphepEntities();
-                    var u = db.Users.FirstOrDefault(x => x.username == System.Web.HttpContext.Current.User.Identity.Name);
                     // Query your data here. Obey Ordering, paging and filtering parameters given in the context.QueryOptions.
                     // Use Entity Framework, a module from your IoC Container, or any other method.
                     // Return QueryResult object containing IEnumerable<YouModelItem>
@@ -323,7 +321,7 @@ namespace ProjectNghiPhep
                     var query = (from doc in db.Documents
                                  join user in db.Users
                                  on doc.createdById equals user.C_id
-                                 where doc.status == 99 && doc.createdById == u.C_id
+                                 where doc.status == 99
                                  select new
                                  {
                                      C_id = doc.C_id,
@@ -430,7 +428,6 @@ namespace ProjectNghiPhep
                 {
                     var result = new QueryResult<Document>();
                     NghiphepEntities db = new NghiphepEntities();
-                    var u = db.Users.FirstOrDefault(x => x.username == System.Web.HttpContext.Current.User.Identity.Name);
                     // Query your data here. Obey Ordering, paging and filtering parameters given in the context.QueryOptions.
                     // Use Entity Framework, a module from your IoC Container, or any other method.
                     // Return QueryResult object containing IEnumerable<YouModelItem>
@@ -438,7 +435,7 @@ namespace ProjectNghiPhep
                     var query = (from doc in db.Documents
                                  join user in db.Users
                                  on doc.createdById equals user.C_id
-                                 where doc.status == 99 && doc.createdById == u.C_id
+                                 where doc.status == 99
                                  select new
                                  {
                                      C_id = doc.C_id,
@@ -545,7 +542,6 @@ namespace ProjectNghiPhep
                 {
                     var result = new QueryResult<Document>();
                     NghiphepEntities db = new NghiphepEntities();
-                    var u = db.Users.FirstOrDefault(x => x.username == System.Web.HttpContext.Current.User.Identity.Name);
                     // Query your data here. Obey Ordering, paging and filtering parameters given in the context.QueryOptions.
                     // Use Entity Framework, a module from your IoC Container, or any other method.
                     // Return QueryResult object containing IEnumerable<YouModelItem>
@@ -553,7 +549,7 @@ namespace ProjectNghiPhep
                     var query = (from doc in db.Documents
                                  join user in db.Users
                                  on doc.createdById equals user.C_id
-                                 where doc.status == 100 && doc.createdById == u.C_id
+                                 where doc.status == 100
                                  select new
                                  {
                                      C_id = doc.C_id,

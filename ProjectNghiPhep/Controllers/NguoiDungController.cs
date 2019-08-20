@@ -226,8 +226,6 @@ namespace ProjectNghiPhep.Controllers
             }
         }
 
-
-        //Đổi mật khẩu
         [AllowAnonymous]
         public ActionResult ChangePassword()
         {
@@ -238,21 +236,23 @@ namespace ProjectNghiPhep.Controllers
         [HttpPost]
         public ActionResult ChangePassword(ChangePasswordViewModel model)
         {
-            //validate
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            //validate
+
             if (model.NewPassword != model.NewPasswordAgain)
             {
                 ModelState.AddModelError("", "Mật khẩu mới được nhập lại không khớp.");
                 return View(model);
             }
-            //Đổi trong database
+
             using (NghiphepEntities db = new NghiphepEntities())
             {
-                var user = db.Users.SingleOrDefault(x => x.username == User.Identity.Name && x.password == model.CurrentPassword);
+                if (User != null && User.Identity != null && !string.IsNullOrEmpty(User.Identity.Name)) {
+                    model.Username = User.Identity.Name;
+                }
+                var user = db.Users.SingleOrDefault(x => x.username == model.Username  && x.password == model.CurrentPassword);
                 if (user != null)
                 {
                     user.password = model.NewPassword;
@@ -266,4 +266,3 @@ namespace ProjectNghiPhep.Controllers
         }
     }
 }
-

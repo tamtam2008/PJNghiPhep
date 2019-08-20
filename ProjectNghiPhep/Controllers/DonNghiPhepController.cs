@@ -22,6 +22,7 @@ namespace ProjectNghiPhep.Controllers
                 var query = (from user in db.Users
                              join title in db.Titles
                              on user.titleId equals title.C_id
+                             where user.C_id == id
                              select new
                              {
                                  C_id = user.C_id,
@@ -54,11 +55,10 @@ namespace ProjectNghiPhep.Controllers
             if (id != null)
             {
                 NghiphepEntities db = new NghiphepEntities();
-                var u = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
                 var query = (from user in db.Users
                              join title in db.Titles
                              on user.titleId equals title.C_id
-                             where user.C_id == u.C_id
+                             where user.C_id == id
                              select new
                              {
                                  C_id = user.C_id,
@@ -155,25 +155,14 @@ namespace ProjectNghiPhep.Controllers
                 Document document = queryDocument();
                 string code = CreateAutoCode(document != null ? document.code : null);
                 var user = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
-                float startDate = (float)(DateTime.ParseExact(dnp.dateStart, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000;
-                float endDate = (float)(DateTime.ParseExact(dnp.dateEnd, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000;
-                int count = (int)((endDate - startDate) / 1000 / 3600 / 24);
-                if (user.dayOff <= 0)
-                {
-                    return RedirectToAction("CreateNew");
-                }
-                if (count >= user.dayOff)
-                {
-                    return RedirectToAction("CreateNew");
-                }
                 var doc = new Document()
                 {
                     C_id = code,
                     code = code,
                     status = 0,
                     createdAt = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
-                    startDate = startDate,
-                    endDate = endDate,
+                    startDate = (float)(DateTime.ParseExact(dnp.dateStart, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
+                    endDate = (float)(DateTime.ParseExact(dnp.dateEnd, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture).Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
                     createdById = user.C_id,
                     reason = dnp.reason
                 };
