@@ -22,12 +22,12 @@
                     var id = localStorage.getItem('token')
                     if (id) {
                         if (title === 'GIAMDOC') {
-                            window.location.replace('/DonNghiPhep/Manager/' + id)
+                            window.location.replace('/sep22t9/DonNghiPhep/Manager/' + id)
                         } else {
-                            window.location.replace('/DonNghiPhep/Employee/' + id)
+                            window.location.replace('/sep22t9/DonNghiPhep/Employee/' + id)
                         }
                     } else {
-                        window.location.replace('/Account/Login')
+                        window.location.replace('/sep22t9/Account/Login')
                     }
                     return false;
                 }
@@ -44,7 +44,7 @@
             </script>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("Văn Lang University", "Index", "Home")</p>
+                    <p class="site-title" onclick="window.location.replace('/sep22t9')"></p>
                 </div>
                 <div class="float-right">
                     <section id="login">

@@ -39,6 +39,9 @@ namespace ProjectNghiPhep.Models
         [Required(ErrorMessage = "Trường này là bắt buộc")]
         [Display(Name = "Mật khẩu")]
         public string password { get; set; }
-    
+        [Required(ErrorMessage = "Trường này là bắt buộc")]
+        [Display(Name = "Phòng ban")]
+        public string departmentId { get; set; }
+        public bool isActive { get; set; }
     }
 }

@@ -1,6 +1,30 @@
 ﻿@model ProjectNghiPhep.Models.NHANVIEN
 @{
     ViewBag.Title = "Register";
+    List<SelectListItem> departments = new List<SelectListItem>();
+    //data cho mấy combobox
+    departments.Add(new SelectListItem
+    {
+        Text = "Ban chủ nhiệm",
+        Value = "DPM_000001"
+    });
+    departments.Add(new SelectListItem
+    {
+        Text = "Đào tạo",
+        Value = "DPM_000002"
+    });
+    List<SelectListItem> contractTypes = new List<SelectListItem>();
+
+    contractTypes.Add(new SelectListItem
+    {
+        Text = "Có thời hạn",
+        Value = "HD_000001"
+    });
+    contractTypes.Add(new SelectListItem
+    {
+        Text = "Không thời hạn",
+        Value = "HD_000002"
+    });
 }
 
 <section id="loginForm">
@@ -12,6 +36,42 @@
         <div class="form-horizontal">
             <h4>Đăng kí</h4>
             <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.fullName, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.fullName)
+                    @Html.ValidationMessageFor(m => m.fullName)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.gender, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.gender)
+                    @Html.ValidationMessageFor(m => m.gender)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.address, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.address)
+                    @Html.ValidationMessageFor(m => m.address)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.mobile, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.mobile)
+                    @Html.ValidationMessageFor(m => m.mobile)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.email, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.email)
+                    @Html.ValidationMessageFor(m => m.email)
+                </div>
+            </div>
             <div class="form-group">
                 @Html.LabelFor(m => m.username, htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
@@ -27,46 +87,22 @@
                 </div>
             </div>
             <div class="form-group">
-                @Html.LabelFor(model => model.contractId, htmlAttributes: new { @class = "control-label col-md-3" })
-                <div class="col-md-9" style="height: 27px;">
-                    <select class="form-control" name="test" style="width: 250px;">
-                        @foreach (var item in ViewBag.contracts)
-                        {
-                            <option value="@item.C_id">@item.name</option>
-                        }
-                    </select>
-                    <br />
-                    @Html.ValidationMessageFor(model => model.contractId, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.email, htmlAttributes: new { @class = "control-label col-md-3" })
+                @Html.LabelFor(m => m.contractId, htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
-                    @Html.PasswordFor(m => m.email)
-                    @Html.ValidationMessageFor(m => m.email)
+                    @Html.DropDownListFor(m => m.contractId, contractTypes, "Chọn loại hợp đồng", new { @class = "form-control selectbox" })
                 </div>
             </div>
+
             <div class="form-group">
-                @Html.LabelFor(m => m.gender, htmlAttributes: new { @class = "control-label col-md-3" })
+                @Html.LabelFor(m => m.departmentId, htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
-                    @Html.PasswordFor(m => m.gender)
-                    @Html.ValidationMessageFor(m => m.gender)
+                    @Html.DropDownListFor(m => m.departmentId, departments, "Chọn phòng ban", new { @class = "form-control selectbox" })
                 </div>
             </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.address, htmlAttributes: new { @class = "control-label col-md-3" })
-                <div class="col-md-9">
-                    @Html.PasswordFor(m => m.address)
-                    @Html.ValidationMessageFor(m => m.address)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.mobile, htmlAttributes: new { @class = "control-label col-md-3" })
-                <div class="col-md-9">
-                    @Html.PasswordFor(m => m.mobile)
-                    @Html.ValidationMessageFor(m => m.mobile)
-                </div>
-            </div>
+            
+            
+            
+            
             <div class="form-group">
                 <div class="col-md-offset-3 col-md-9">
                     <input type="submit" value="Submit" />

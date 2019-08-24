@@ -8,7 +8,6 @@ using MVCGrid.Models;
 using MVCGrid.Web;
 using ProjectNghiPhep.Models;
 using ProjectNghiPhep.Models.ViewModels;
-using System.IO;
 
 namespace ProjectNghiPhep.Controllers
 {
@@ -143,22 +142,13 @@ namespace ProjectNghiPhep.Controllers
             }
             return RedirectToAction("Index");
         }
-        [HttpPost]
-        public ActionResult SaveUser (HttpPostedFileBase file,User user)
+
+        public ActionResult SaveUser (User user)
         {
             NghiphepEntities db = new NghiphepEntities();
             var result = db.Users.SingleOrDefault(b => b.username == user.username);
             if (result != null)
             {
-                if (file != null && file.ContentLength > 0)
-                {
-
-                    string filename = Path.GetFileName(file.FileName);
-                        string _filename = DateTime.Now.ToString("yymmssfff") + filename;
-                        string extension = Path.GetExtension(file.FileName);
-                        string path = Path.Combine(Server.MapPath("~/Images/"), _filename);
-                        file.SaveAs(path);
-                }
                 result.username = user.username;
                 result.fullName = user.fullName;
                 result.email = user.email;
@@ -234,6 +224,46 @@ namespace ProjectNghiPhep.Controllers
                 //Lưu thành công thì chuyển đến tran index
                 return RedirectToAction("Index");
             }
-        } 
+        }
+
+
+        //Đổi mật khẩu
+        [AllowAnonymous]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult ChangePassword(ChangePasswordViewModel model)
+        {
+            //validate
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            //validate
+            if (model.NewPassword != model.NewPasswordAgain)
+            {
+                ModelState.AddModelError("", "Mật khẩu mới được nhập lại không khớp.");
+                return View(model);
+            }
+            //Đổi trong database
+            using (NghiphepEntities db = new NghiphepEntities())
+            {
+                var user = db.Users.SingleOrDefault(x => x.username == User.Identity.Name && x.password == model.CurrentPassword);
+                if (user != null)
+                {
+                    user.password = model.NewPassword;
+                    db.SaveChanges();
+                    ViewBag.MessageSuccess = "Mật khẩu đã được đổi thành công.";
+                    return View(model);
+                }
+                ModelState.AddModelError("", "Mật khẩu không đúng.");
+                return View(model);
+            }
+        }
     }
 }
+

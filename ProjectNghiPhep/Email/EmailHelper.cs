@@ -27,7 +27,7 @@ namespace ProjectNghiPhep.Email
                 //Quá 6 giây nếu ko gửi đc mail thì báo gửi mail thất bại (do ko có mạng, hay do chưa enable cái ở trên)
                 client.Timeout = 6000;
 
-                //gán lại nội dung email từ model truyền vào
+                //Mấy cái này là gán lại nội dung email từ model truyền vào
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress(email);
                 if (mailModel.ListToEmail != null && mailModel.ListToEmail.Count > 0) { mailModel.ListToEmail.ForEach(x => mail.To.Add(x)); }
