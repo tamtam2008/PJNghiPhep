@@ -31,8 +31,7 @@
     @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
-
+        
         <div class="form-horizontal">
             <h4>Đăng kí</h4>
             <hr />

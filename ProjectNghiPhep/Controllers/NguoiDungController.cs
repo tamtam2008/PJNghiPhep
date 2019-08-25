@@ -8,6 +8,7 @@ using MVCGrid.Models;
 using MVCGrid.Web;
 using ProjectNghiPhep.Models;
 using ProjectNghiPhep.Models.ViewModels;
+using System.IO;
 
 namespace ProjectNghiPhep.Controllers
 {
@@ -142,13 +143,22 @@ namespace ProjectNghiPhep.Controllers
             }
             return RedirectToAction("Index");
         }
-
-        public ActionResult SaveUser (User user)
+        [HttpPost]
+        public ActionResult SaveUser(HttpPostedFileBase file, User user)
         {
             NghiphepEntities db = new NghiphepEntities();
             var result = db.Users.SingleOrDefault(b => b.username == user.username);
             if (result != null)
             {
+                if (file != null && file.ContentLength > 0)
+                {
+
+                    string filename = Path.GetFileName(file.FileName);
+                    string _filename = DateTime.Now.ToString("yymmssfff") + filename;
+                    string extension = Path.GetExtension(file.FileName);
+                    string path = Path.Combine(Server.MapPath("~/Images/"), _filename);
+                    file.SaveAs(path);
+                }
                 result.username = user.username;
                 result.fullName = user.fullName;
                 result.email = user.email;
