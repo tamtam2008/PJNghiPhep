@@ -125,6 +125,40 @@ namespace ProjectNghiPhep.Controllers
             return View(documents[0]);
         }
 
+        public ActionResult UpdateDocument(string id)
+        {
+            NghiphepEntities db = new NghiphepEntities();
+            var query = (from doc in db.Documents
+                         join user in db.Users
+                         on doc.createdById equals user.C_id
+                         where doc.C_id == id
+                         select new
+                         {
+                             C_id = doc.C_id,
+                             createdBy = user,
+                             code = doc.code,
+                             status = doc.status,
+                             createdAt = doc.createdAt,
+                             startDate = doc.startDate,
+                             endDate = doc.endDate,
+                             reason = doc.reason
+                         }).OrderBy(x => x.code);
+            var documents = query.ToList().Select(r => new Document
+            {
+                C_id = r.C_id,
+                createdBy = r.createdBy,
+                code = r.code,
+                status = r.status,
+                reason = r.reason,
+                createdAt = r.createdAt,
+                startDateString = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(r.startDate) / 1000d)).ToLocalTime().ToString(),
+                endDateString = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(r.endDate) / 1000d)).ToLocalTime().ToString(),
+                count = (int)((r.endDate - r.startDate) / 1000 / 3600 / 24) == 0 ? "1 ngày" : ((int)((r.endDate - r.startDate) / 1000 / 3600 / 24)).ToString() + " ngày"
+            }).ToList();
+            documents.Reverse();
+            return View(documents[0]);
+        }
+
         private string CreateAutoCode(string currentCode)
         {
             if (currentCode != null)
@@ -170,7 +204,7 @@ namespace ProjectNghiPhep.Controllers
                 {
                     C_id = code,
                     code = code,
-                    status = 0,
+                    status = -1,
                     createdAt = (float)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds * 1000,
                     startDate = startDate,
                     endDate = endDate,
@@ -281,6 +315,34 @@ namespace ProjectNghiPhep.Controllers
             };
             EmailHelper.SendMail(mail);
             return RedirectToAction("Manager");
+        }
+
+        [HttpGet]
+        public ActionResult RemoveDocument(string id)
+        {
+            NghiphepEntities db = new NghiphepEntities();
+            Document document = queryDocument();
+            var result = db.Documents.SingleOrDefault(b => b.C_id == id);
+            if (result != null)
+            {
+                result.status = 101;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Employee");
+        }
+
+        [HttpGet]
+        public ActionResult PublishDocument(string id)
+        {
+            NghiphepEntities db = new NghiphepEntities();
+            Document document = queryDocument();
+            var result = db.Documents.SingleOrDefault(b => b.C_id == id);
+            if (result != null)
+            {
+                result.status = 0;
+                db.SaveChanges();
+            }
+            return RedirectToAction("Employee");
         }
 
         [HttpGet]

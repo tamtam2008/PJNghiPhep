@@ -425,6 +425,7 @@
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Views\DonNghiPhep\Employee.cshtml" />
     <Content Include="Views\DonNghiPhep\ViewDocument.cshtml" />
+    <Content Include="Views\DonNghiPhep\UpdateDocument.cshtml" />
     <None Include="Views\Home\About.cshtml" />
     <None Include="Views\Home\Contact.cshtml" />
     <None Include="Views\Home\Index.cshtml" />

@@ -20,7 +20,8 @@ namespace ProjectNghiPhep.Models
         public string dateEnd { get; set; }
         [Required(ErrorMessage = "Trường này là bắt buộc")]
         [Display(Name = "Lý do")]
-        [StringLength(30, MinimumLength = 3, ErrorMessage = "Invalid")]
+        [StringLength(200)]
+        [DataType(DataType.MultilineText)]
         public string reason { get; set; }
     }
 }

@@ -33,7 +33,10 @@ namespace ProjectNghiPhep.Models
         public string startDateString { get; set; }
         [Display(Name = "Ngày kết thúc")]
         public Nullable<double> endDate { get; set; }
+        [Required(ErrorMessage = "Trường này là bắt buộc")]
         [Display(Name = "Lý do")]
+        [StringLength(200)]
+        [DataType(DataType.MultilineText)]
         public string reason { get; set; }
         [Display(Name = "Ngày kết thúc")]
 

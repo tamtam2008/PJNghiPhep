@@ -6,36 +6,92 @@
 </div>
 <div class="panel panel-default">
     <div class="panel-body">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Mã đơn</th>
-                    <th>Người tạo</th>
-                    <th>Ngày nghỉ bắt đầu</th>
-                    <th>Ngày nghỉ kết thúc</th>
-                    <th>Ngày phép còn lại</th>
-                    <th>Lý do</th>
-                    <th>Trạng thái</th>
-                    <th>Người duyệt</th>
-                    <th>Ngày duyệt</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+        <div class="col-md-3">
+            <table class="table table-bordered" style="height: 100%">
+                <thead>
                     <tr>
-                        <td>@item.DocumentId</td>
-                        <td>@item.CreateBy</td>
-                        <td>@item.StartDate</td>
-                        <td>@item.EndDate</td>
-                        <td>@item.DayOff</td>
-                        <td>@item.Reason</td>
-                        <td>@item.Status</td>
-                        <td>@item.ApproveOrRejectBy</td>
-                        <td>@item.ApproveOrRejectDate</td>
+                        <th>
+                            <h2>
+                                Tổng số ngày nghỉ
+                            </h2>
+                        </th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="height: 200px; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+                            <h1>
+                                @Model[0].totalDayOff
+                            </h1>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <table class="table table-bordered" style="height: 100%">
+                <thead>
+                    <tr>
+                        <th>
+                            <h2>
+                                Đã sử dụng
+                            </h2>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="height: 200px; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+                            <h1>
+                                @Model[0].usedDayOff
+                            </h1>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <table class="table table-bordered" style="height: 100%">
+                <thead>
+                    <tr>
+                        <td>
+                            <h2>
+                                Ngày nghỉ còn lại
+                            </h2>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="height: 200px; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+                            <h1>
+                                @Model[0].DayOff
+                            </h1>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <h2>
+                                Lịch sử
+                            </h2>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody style="height: 200px; overflow-y: auto; display: block;">
+                    @foreach (var item in Model)
+                    {
+                        <tr style="max-height: 30px;">
+                            <td>Đơn &nbsp; @item.DocumentId &nbsp; @item.Status &nbsp; Vào lúc &nbsp; @item.ApproveOrRejectDate </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

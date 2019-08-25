@@ -785,3 +785,11 @@ footer {
     height: 68vh;
     overflow-y: auto;
 }
+
+textarea {
+    width: 300px;
+}
+
+.disabled {
+    pointer-events:none;
+}

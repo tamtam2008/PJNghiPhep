@@ -72,5 +72,8 @@ namespace ProjectNghiPhep.Models.ViewModels
         public string ApproveOrRejectBy { get; set; }
         public string ApproveOrRejectDate { get; set; }
         public int DayOff { get; set; }
+        public int totalDayOff { get; set; }
+
+        public int usedDayOff { get; set; }
     };
 }

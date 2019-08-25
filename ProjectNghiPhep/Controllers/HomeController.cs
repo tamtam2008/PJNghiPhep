@@ -19,6 +19,8 @@ namespace ProjectNghiPhep.Controllers
             {
                 
                 var user = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
+                var documents = db.Documents.Where(d => d.createdById == user.C_id);
+                int dateOff = documents.Sum(d => (int)((d.endDate - d.startDate) / 1000 / 3600 / 24));
                 var result = from u in db.Users
                              join d in db.Documents
                              on u.C_id equals d.createdById
@@ -32,7 +34,8 @@ namespace ProjectNghiPhep.Controllers
                                  Reason = d.reason,
                                  ApproveOrRejectBy = d.verifiedById,
                                  ApproveOrRejectDate = d.verifiedAt,
-                                 DayOff = u.dayOff
+                                 usedDayOff = dateOff,
+                                 totalDayOff = u.dayOff
                              };
                 if (user != null && user.titleId != "TITLE_001")
                 {
@@ -50,7 +53,8 @@ namespace ProjectNghiPhep.Controllers
                                  Reason = d.reason,
                                  ApproveOrRejectBy = d.verifiedById,
                                  ApproveOrRejectDate = d.verifiedAt,
-                                 DayOff = u.dayOff
+                                 usedDayOff = dateOff,
+                                 totalDayOff = u.dayOff
                              };
                 }
                 var listData = new List<DashboardViewModel>();
@@ -63,11 +67,12 @@ namespace ProjectNghiPhep.Controllers
                         StartDate = item.StartDate.HasValue ? convertDoubleToDatetime(item.StartDate.Value) : "",
                         EndDate = item.StartDate.HasValue ? convertDoubleToDatetime(item.EndDate.Value) : "",
                         Reason = item.Reason,
-                        Status = item.Status == 0 ? "Chờ duyệt" : item.Status == 99 ? "Đã duyệt" : "Đã hủy",
+                        Status = item.Status == 0 ? "đã được nộp" : item.Status == 99 ? "đã được duyệt" : "Đã bị hủy",
                         ApproveOrRejectBy = item.ApproveOrRejectBy,
                         ApproveOrRejectDate = item.ApproveOrRejectDate.HasValue ? convertDoubleToDatetime(item.ApproveOrRejectDate.Value) : "",
-                        DayOff = item.DayOff.HasValue ? item.DayOff.Value : 0
-
+                        usedDayOff = item.usedDayOff,
+                        totalDayOff = (int)item.totalDayOff,
+                        DayOff = (int)(item.totalDayOff - item.usedDayOff)
                     };
                     listData.Add(r);
                 }
