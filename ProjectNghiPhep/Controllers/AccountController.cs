@@ -123,6 +123,7 @@ namespace ProjectNghiPhep.Controllers
         [HttpPost]
         public ActionResult Register(NHANVIEN nv)
         {
+
             //Validate dữ liệu, nếu chưa đúng thì nhập lại
             if (!ModelState.IsValid)
             {
@@ -218,6 +219,37 @@ namespace ProjectNghiPhep.Controllers
             //}).ToList();
             //ViewData["departments"] = departments;
             //return View();
+
+            //NghiphepEntities db = new NghiphepEntities();
+            //User u = new User
+            //{
+            //    C_id = "_User_01",
+            //    address = nv.address,
+            //    contractId = nv.contractId,
+            //    email = nv.email,
+            //    dayOff = 12,
+            //    fullName = nv.fullName
+            //};
+            //db.Users.Add(u);
+            //db.SaveChanges();
+            //var contract_query = (from contract in db.ContractTypes
+            //                      select new
+            //                      {
+            //                          C_id = contract.C_id,
+            //                          code = contract.code,
+            //                          name = contract.name,
+            //                          dayOff = contract.dayOff
+            //                      });
+            //var contracts = contract_query.ToList().Select(c => new ContractType
+            //{
+            //    C_id = c.C_id,
+            //    code = c.code,
+            //    name = c.name,
+            //    dayOff = c.dayOff
+            //}).ToList();
+            //ViewData["contracts"] = contracts;
+            //return View();
+
         }
 
         //    //
