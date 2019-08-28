@@ -59,6 +59,8 @@ namespace ProjectNghiPhep.Models.ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Nhập lại mật khẩu mới")]
         public string NewPasswordAgain { get; set; }
+
+        public string Username { get; set; }
     }
 
     public class DashboardViewModel
