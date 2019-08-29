@@ -48,6 +48,9 @@ namespace ProjectNghiPhep
                    cols.Add("createdBy").WithColumnName("createdBy")
                         .WithHeaderText("Người tạo")
                         .WithValueExpression(i => i.createdBy.username);
+                   cols.Add("department").WithColumnName("department")
+                        .WithHeaderText("Phòng ban")
+                        .WithValueExpression(i => i.department);
                    cols.Add("startDate").WithColumnName("startDate")
                         .WithHeaderText("Ngày bắt dầu")
                         .WithValueExpression((i, c) =>
@@ -91,6 +94,7 @@ namespace ProjectNghiPhep
                 {
                     var result = new QueryResult<Document>();
                     NghiphepEntities db = new NghiphepEntities();
+                    var u = db.Users.FirstOrDefault(x => x.username == System.Web.HttpContext.Current.User.Identity.Name);
                     // Query your data here. Obey Ordering, paging and filtering parameters given in the context.QueryOptions.
                     // Use Entity Framework, a module from your IoC Container, or any other method.
                     // Return QueryResult object containing IEnumerable<YouModelItem>
@@ -98,7 +102,9 @@ namespace ProjectNghiPhep
                     var query = (from doc in db.Documents
                                   join user in db.Users
                                   on doc.createdById equals user.C_id
-                                  where doc.status == 0
+                                  join department in db.Departments
+                                  on user.departmentId equals department.C_id
+                                  where doc.status == 0 && user.departmentId == u.departmentId
                                   select new 
                                   {
                                       C_id = doc.C_id,
@@ -107,6 +113,7 @@ namespace ProjectNghiPhep
                                       status = doc.status,
                                       createdAt = doc.createdAt,
                                       startDate = doc.startDate,
+                                      department = department.name,
                                       endDate = doc.endDate
                                   });
                      System.Diagnostics.Debug.WriteLine(options.GetLimitOffset().HasValue);
@@ -118,6 +125,7 @@ namespace ProjectNghiPhep
                                         status = r.status,
                                         createdAt = r.createdAt,
                                         startDate = r.startDate,
+                                        department = r.department,
                                         endDate = r.endDate
                                     }).ToList();
                      //System.Diagnostics.Debug.WriteLine(options.GetLimitRowcount().Value);
@@ -149,16 +157,7 @@ namespace ProjectNghiPhep
                         .WithHeaderText("Trạng thái")
                         .WithValueExpression((i, c) =>
                         {
-                            if (i.status == 0)
-                            {
-                                return "Chờ duyệt";
-                            }
-                            else
-                                if (i.status == 99)
-                                {
-                                    return "Đã duyệt";
-                                }
-                            return "Đã hủy";
+                            return "Đang xử lý";
                         });
                     cols.Add("createdAt").WithColumnName("createdAt")
                         .WithHeaderText("Thời gian tạo")
@@ -409,6 +408,9 @@ namespace ProjectNghiPhep
                     cols.Add("createdBy").WithColumnName("createdBy")
                          .WithHeaderText("Người tạo")
                          .WithValueExpression(i => i.createdBy.username);
+                    cols.Add("department").WithColumnName("department")
+                        .WithHeaderText("Phòng ban")
+                        .WithValueExpression(i => i.department);
                     cols.Add("startDate").WithColumnName("startDate")
                          .WithHeaderText("Ngày bắt dầu")
                          .WithValueExpression((i, c) =>
@@ -448,7 +450,9 @@ namespace ProjectNghiPhep
                     var query = (from doc in db.Documents
                                  join user in db.Users
                                  on doc.createdById equals user.C_id
-                                 where doc.status == 99 && doc.createdById == u.C_id
+                                 join department in db.Departments
+                                 on user.departmentId equals department.C_id
+                                 where doc.status == 99 && user.departmentId == u.departmentId
                                  select new
                                  {
                                      C_id = doc.C_id,
@@ -457,6 +461,7 @@ namespace ProjectNghiPhep
                                      status = doc.status,
                                      createdAt = doc.createdAt,
                                      startDate = doc.startDate,
+                                     department = department.name,
                                      endDate = doc.endDate
                                  });
                     System.Diagnostics.Debug.WriteLine(options.GetLimitOffset().HasValue);
@@ -468,6 +473,7 @@ namespace ProjectNghiPhep
                         status = r.status,
                         createdAt = r.createdAt,
                         startDate = r.startDate,
+                        department = r.department,
                         endDate = r.endDate
                     }).ToList();
                     //System.Diagnostics.Debug.WriteLine(options.GetLimitRowcount().Value);
@@ -634,6 +640,9 @@ namespace ProjectNghiPhep
                     cols.Add("createdBy").WithColumnName("createdBy")
                          .WithHeaderText("Người tạo")
                          .WithValueExpression(i => i.createdBy.username);
+                    cols.Add("department").WithColumnName("department")
+                        .WithHeaderText("Phòng ban")
+                        .WithValueExpression(i => i.department);
                     cols.Add("startDate").WithColumnName("startDate")
                          .WithHeaderText("Ngày bắt dầu")
                          .WithValueExpression((i, c) =>
@@ -678,7 +687,9 @@ namespace ProjectNghiPhep
                     var query = (from doc in db.Documents
                                  join user in db.Users
                                  on doc.createdById equals user.C_id
-                                 where doc.status == 100 && doc.createdById == u.C_id
+                                 join department in db.Departments
+                                 on user.departmentId equals department.name
+                                 where doc.status == 100 && user.departmentId == u.departmentId
                                  select new
                                  {
                                      C_id = doc.C_id,
@@ -687,6 +698,7 @@ namespace ProjectNghiPhep
                                      status = doc.status,
                                      createdAt = doc.createdAt,
                                      startDate = doc.startDate,
+                                     department = department.name,
                                      endDate = doc.endDate
                                  });
                     System.Diagnostics.Debug.WriteLine(options.GetLimitOffset().HasValue);
@@ -698,7 +710,8 @@ namespace ProjectNghiPhep
                         status = r.status,
                         createdAt = r.createdAt,
                         startDate = r.startDate,
-                        endDate = r.endDate
+                        endDate = r.endDate,
+                        department = r.department
                     }).ToList();
                     //System.Diagnostics.Debug.WriteLine(options.GetLimitRowcount().Value);
                     int count = 0;
@@ -785,6 +798,7 @@ namespace ProjectNghiPhep
                 {
                     var result = new QueryResult<Document>();
                     NghiphepEntities db = new NghiphepEntities();
+                    var u = db.Users.FirstOrDefault(x => x.username == System.Web.HttpContext.Current.User.Identity.Name);
                     // Query your data here. Obey Ordering, paging and filtering parameters given in the context.QueryOptions.
                     // Use Entity Framework, a module from your IoC Container, or any other method.
                     // Return QueryResult object containing IEnumerable<YouModelItem>
@@ -792,7 +806,7 @@ namespace ProjectNghiPhep
                     var query = (from doc in db.Documents
                                  join user in db.Users
                                  on doc.createdById equals user.C_id
-                                 where doc.status == 100
+                                 where doc.status == 100 && doc.createdById == u.C_id 
                                  select new
                                  {
                                      C_id = doc.C_id,
@@ -857,6 +871,18 @@ namespace ProjectNghiPhep
                         {
                             return new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Math.Round(System.Convert.ToDouble(i.createdAt) / 1000d)).ToLocalTime().ToString();
                         });
+                    cols.Add("Title").WithColumnName("Title")
+                        .WithHeaderText("Chức vụ")
+                        .WithValueExpression((i, c) =>
+                        {
+                            return i.Title.name;
+                        });
+                    cols.Add("Department").WithColumnName("Department")
+                       .WithHeaderText("Phòng ban")
+                       .WithValueExpression((i, c) =>
+                       {
+                           return i.Department.name;
+                       });
                     cols.Add("ContractType").WithColumnName("ContractTypeName")
                         .WithHeaderText("Hợp đồng")
                         .WithValueExpression((i, c) =>
@@ -885,13 +911,19 @@ namespace ProjectNghiPhep
                     var query = (from user in db.Users
                                  join contract in db.ContractTypes
                                  on user.contractId equals contract.C_id
-                                 where user.isActive == true
+                                 join title in db.Titles
+                                 on user.titleId equals title.C_id
+                                 join department in db.Departments
+                                 on user.departmentId equals department.C_id
+                                 where user.isActive == true && user.username != "admin"
                                  select new
                                  {
                                      C_id = user.C_id,
                                      username = user.username,
                                      dayOff = user.dayOff,
                                      createdAt = user.createdAt,
+                                     Title = title,
+                                     Department = department,
                                      ContractType = contract
                                  });
                     System.Diagnostics.Debug.WriteLine(options.GetLimitOffset().HasValue);
@@ -901,7 +933,9 @@ namespace ProjectNghiPhep
                         username = r.username,
                         dayOff = r.dayOff,
                         createdAt = r.createdAt,
-                        ContractType = r.ContractType
+                        ContractType = r.ContractType,
+                        Department = r.Department,
+                        Title = r.Title
                     }).ToList();
                     //System.Diagnostics.Debug.WriteLine(options.GetLimitRowcount().Value);
                     int count = 0;

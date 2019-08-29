@@ -793,3 +793,17 @@ textarea {
 .disabled {
     pointer-events:none;
 }
+
+.form-control {
+    width: 250px;
+    max-width: 250px;
+}
+
+.profile-disable {
+    pointer-events:none;
+    width: 300px !important;
+}
+
+input {
+    width: 250px  !important;
+}

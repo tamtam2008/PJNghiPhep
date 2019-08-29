@@ -37,7 +37,11 @@ namespace ProjectNghiPhep.Models
         public bool isActive { get; set; }
         public string createdById { get; set; }
         public Nullable<double> createdAt { get; set; }
+        [Required(ErrorMessage = "Trường này là bắt buộc")]
+        [Display(Name = "Chức vụ")]
         public string titleId { get; set; }
+        [Required(ErrorMessage = "Trường này là bắt buộc")]
+        [Display(Name = "Phòng ban")]
         public string departmentId { get; set; }
         [Required(ErrorMessage = "Trường này là bắt buộc")]
         [Display(Name = "Loại hợp đồng")]

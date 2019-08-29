@@ -35,10 +35,19 @@ namespace ProjectNghiPhep.Models
         public string contractId { get; set; }
         [Required(ErrorMessage = "Trường này là bắt buộc")]
         [Display(Name = "Mã nhân viên")]
+        
         public string username { get; set; }
         [Required(ErrorMessage = "Trường này là bắt buộc")]
         [Display(Name = "Mật khẩu")]
         public string password { get; set; }
+
+        [Required(ErrorMessage = "Trường này là bắt buộc")]
+        [Display(Name = "Chức vụ")]
+        public string titleId { get; set; }
+
+        [Required(ErrorMessage = "Trường này là bắt buộc")]
+        [Display(Name = "Phòng ban")]
+        public string departmentId { get; set; }
     
     }
 }

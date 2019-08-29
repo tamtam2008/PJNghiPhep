@@ -19,8 +19,16 @@ namespace ProjectNghiPhep.Controllers
             {
                 
                 var user = db.Users.FirstOrDefault(x => x.username == User.Identity.Name);
+                if (user == null)
+                {
+                    return RedirectToAction("Login", "Account");
+                }
                 var documents = db.Documents.Where(d => d.createdById == user.C_id);
-                int dateOff = documents.Sum(d => (int)((d.endDate - d.startDate) / 1000 / 3600 / 24));
+                int dateOff = 0;
+                //if (documents != null)
+                //{
+                //    dateOff = (int)documents.Sum(d => (int)((d.endDate - d.startDate) / 1000 / 3600 / 24));
+                //}
                 var result = from u in db.Users
                              join d in db.Documents
                              on u.C_id equals d.createdById

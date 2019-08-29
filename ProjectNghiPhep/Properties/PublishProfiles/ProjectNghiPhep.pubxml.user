@@ -122,10 +122,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2019 14:28:53</publishTime>
     </File>
     <File Include="bin/ProjectNghiPhep.dll">
-      <publishTime>08/25/2019 23:09:17</publishTime>
+      <publishTime>08/30/2019 00:16:50</publishTime>
     </File>
     <File Include="bin/ProjectNghiPhep.pdb">
-      <publishTime>08/25/2019 23:09:17</publishTime>
+      <publishTime>08/30/2019 00:16:50</publishTime>
     </File>
     <File Include="bin/ru/Microsoft.Data.Edm.resources.dll">
       <publishTime>08/25/2019 14:28:52</publishTime>
@@ -239,7 +239,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2019 14:28:49</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>08/25/2019 21:47:47</publishTime>
+      <publishTime>08/29/2019 23:03:29</publishTime>
     </File>
     <File Include="Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png">
       <publishTime>08/25/2019 14:28:49</publishTime>
@@ -629,7 +629,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2019 14:28:50</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>08/25/2019 19:51:57</publishTime>
+      <publishTime>08/28/2019 01:47:22</publishTime>
     </File>
     <File Include="Views/Account/_ChangePasswordPartial.cshtml">
       <publishTime>08/25/2019 14:28:50</publishTime>
@@ -647,13 +647,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2019 17:47:18</publishTime>
     </File>
     <File Include="Views/DonNghiPhep/Employee.cshtml">
-      <publishTime>08/25/2019 15:25:02</publishTime>
+      <publishTime>08/30/2019 00:21:46</publishTime>
     </File>
     <File Include="Views/DonNghiPhep/Manager.cshtml">
-      <publishTime>08/25/2019 14:28:50</publishTime>
+      <publishTime>08/29/2019 23:52:59</publishTime>
     </File>
     <File Include="Views/DonNghiPhep/UpdateDocument.cshtml">
-      <publishTime>08/25/2019 18:37:12</publishTime>
+      <publishTime>08/28/2019 01:42:06</publishTime>
     </File>
     <File Include="Views/DonNghiPhep/ViewDocument.cshtml">
       <publishTime>08/25/2019 19:22:52</publishTime>
@@ -665,22 +665,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2019 18:52:17</publishTime>
     </File>
     <File Include="Views/NguoiDung/CreateUser.cshtml">
-      <publishTime>08/25/2019 14:28:50</publishTime>
+      <publishTime>08/29/2019 23:21:41</publishTime>
     </File>
     <File Include="Views/NguoiDung/Edit.cshtml">
-      <publishTime>08/16/2019 10:19:50</publishTime>
+      <publishTime>08/26/2019 23:03:39</publishTime>
     </File>
     <File Include="Views/NguoiDung/Index.cshtml">
       <publishTime>08/25/2019 14:28:50</publishTime>
     </File>
     <File Include="Views/NguoiDung/Profile.cshtml">
-      <publishTime>08/16/2019 10:19:50</publishTime>
+      <publishTime>08/29/2019 22:59:22</publishTime>
     </File>
     <File Include="Views/PhanQuyens/ShowDataBasePhanQuyen.cshtml">
       <publishTime>08/25/2019 14:28:50</publishTime>
     </File>
     <File Include="Views/Registers/Edit.cshtml">
-      <publishTime>08/25/2019 14:28:50</publishTime>
+      <publishTime>08/26/2019 00:35:38</publishTime>
     </File>
     <File Include="Views/Registers/PhanQuyen.cshtml">
       <publishTime>08/25/2019 14:28:50</publishTime>
@@ -692,7 +692,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2019 14:28:50</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/17/2019 22:52:50</publishTime>
+      <publishTime>08/29/2019 23:53:33</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>08/27/2019 22:17:10</publishTime>
+    </File>
+    <File Include="Views/Shared/_MVCGridToolbar.cshtml">
+      <publishTime>08/30/2019 00:11:14</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>08/25/2019 14:28:50</publishTime>
@@ -701,7 +707,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2019 14:28:50</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/25/2019 15:43:01</publishTime>
+      <publishTime>08/26/2019 00:43:32</publishTime>
     </File>
   </ItemGroup>
 </Project>

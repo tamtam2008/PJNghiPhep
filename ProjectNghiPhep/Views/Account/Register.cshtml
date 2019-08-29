@@ -4,19 +4,26 @@
 }
 
 <section id="loginForm">
-    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    @using (Html.BeginForm("RegisterUser", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
 
         <div class="form-horizontal">
-            <h4>Đăng kí</h4>
+            <h4>Đăng ký</h4>
             <hr />
             <div class="form-group">
                 @Html.LabelFor(m => m.username, htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
                     @Html.TextBoxFor(m => m.username)
                     @Html.ValidationMessageFor(m => m.username)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.fullName, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(m => m.fullName)
+                    @Html.ValidationMessageFor(m => m.fullName)
                 </div>
             </div>
             <div class="form-group">
@@ -28,15 +35,23 @@
             </div>
             <div class="form-group">
                 @Html.LabelFor(model => model.contractId, htmlAttributes: new { @class = "control-label col-md-3" })
-                <div class="col-md-9" style="height: 27px;">
-                    <select class="form-control" name="test" style="width: 250px;">
-                        @foreach (var item in ViewBag.contracts)
-                        {
-                            <option value="@item.C_id">@item.name</option>
-                        }
-                    </select>
-                    <br />
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.contractId, new SelectList(ViewBag.contracts, "C_id", "name"), htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.contractId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.titleId, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.titleId, new SelectList(ViewBag.titles, "C_id", "name"), htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.titleId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.departmentId, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.departmentId, new SelectList(ViewBag.departments, "C_id", "name"), htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.departmentId, "", new { @class = "text-danger" })
                 </div>
             </div>
             <div class="form-group">
@@ -69,7 +84,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-3 col-md-9">
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Đăng ký" />
                 </div>
             </div>
         </div>

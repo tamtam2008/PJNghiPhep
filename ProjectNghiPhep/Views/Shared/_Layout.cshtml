@@ -21,7 +21,7 @@
                     var title = localStorage.getItem('title')
                     var id = localStorage.getItem('token')
                     if (id) {
-                        if (title === 'GIAMDOC') {
+                        if (title === 'TITLE_001') {
                             window.location.replace('/sep22t9/DonNghiPhep/Manager/' + id)
                         } else {
                             window.location.replace('/sep22t9/DonNghiPhep/Employee/' + id)
@@ -35,7 +35,7 @@
                     var token = localStorage.getItem('token');
                     var username = localStorage.getItem('username');
                     var title = localStorage.getItem('title');
-                    if (title === 'GIAMDOC') {
+                    if (title === 'TITLE_001') {
                         $("#form_nhanvien").show()
                     } else {
                         $("#form_nhanvien").hide()

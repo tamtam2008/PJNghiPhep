@@ -44,6 +44,8 @@ namespace ProjectNghiPhep.Models
 
         [Display(Name = "Số ngày")]
         public string count { get; set; }
+
+        public string department { get; set; }
         public Nullable<double> verifiedAt { get; set; }
     
         public virtual User createdBy { get; set; }

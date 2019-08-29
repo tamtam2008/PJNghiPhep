@@ -213,6 +213,7 @@
     <Compile Include="Models\Document.cs">
       <DependentUpon>NghiPhepModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MVCGridToolbarModel.cs" />
     <Compile Include="Models\NghiPhepModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -444,6 +445,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_MVCGridToolbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

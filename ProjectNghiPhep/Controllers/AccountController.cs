@@ -62,7 +62,7 @@ namespace ProjectNghiPhep.Controllers
                 HttpContext.User = principal;
                 Thread.CurrentPrincipal = principal;
                 // If we got this far, something failed, redisplay form
-                if (users[0].Title.code == "GIAMDOC")
+                if (users[0].Title.C_id == "TITLE_001")
                 {
                     return RedirectToAction("Manager/" + users[0].C_id, "DonNghiPhep");
                 }
@@ -96,43 +96,169 @@ namespace ProjectNghiPhep.Controllers
                 name = c.name,
                 dayOff = c.dayOff
             }).ToList();
-            ViewData["contracts"] = contracts;
-            return View();
-        }
-
-        [AllowAnonymous]
-        [HttpPost]
-        public ActionResult Register(NHANVIEN nv)
-        {
-            NghiphepEntities db = new NghiphepEntities();
-            User u = new User
-            {
-                C_id = "_User_01",
-                address = nv.address,
-                contractId = nv.contractId,
-                email = nv.email,
-                dayOff = 12,
-                fullName = nv.fullName
-            };
-            db.Users.Add(u);
-            db.SaveChanges();
-            var contract_query = (from contract in db.ContractTypes
+            var departments_query = (from contract in db.Departments
                                   select new
                                   {
                                       C_id = contract.C_id,
                                       code = contract.code,
-                                      name = contract.name,
-                                      dayOff = contract.dayOff
+                                      name = contract.name
                                   });
-            var contracts = contract_query.ToList().Select(c => new ContractType
+            var departments = departments_query.ToList().Select(c => new Department
             {
                 C_id = c.C_id,
                 code = c.code,
                 name = c.name,
-                dayOff = c.dayOff
+            }).ToList();
+            var titles_query = (from contract in db.Titles
+                                     select new
+                                     {
+                                         C_id = contract.C_id,
+                                         code = contract.code,
+                                         name = contract.name
+                                     });
+            var titles = titles_query.ToList().Select(c => new Title
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name,
             }).ToList();
             ViewData["contracts"] = contracts;
+            ViewData["departments"] = departments;
+            ViewData["titles"] = titles;
             return View();
+        }
+
+        private string CreateAutoCode(string currentCode)
+        {
+            if (currentCode != null)
+            {
+                string resultString = "";
+                string numberString = currentCode.Split('_')[1];
+                int number = Int32.Parse(numberString) + 1;
+                resultString = number.ToString();
+                while (resultString.Length < 6)
+                {
+                    resultString = "0" + resultString;
+                }
+                return "USER_" + resultString;
+            }
+            else
+            {
+                return "USER_000001";
+            }
+        }
+
+        private User queryUser()
+        {
+            NghiphepEntities db = new NghiphepEntities();
+            var query = (from user in db.Users
+                         select new
+                         {
+                             C_id = user.C_id,
+                         }).OrderBy(x => x.C_id);
+            var users = query.ToList().Select(r => new User
+            {
+                C_id = r.C_id
+            }).ToList();
+            users.Reverse();
+            return users.Count > 0 ? users[0] : null;
+        }
+
+        //[AllowAnonymous]
+        //[HttpPost]
+        //public ActionResult Register(NHANVIEN nv)
+        //{
+        //    NghiphepEntities db = new NghiphepEntities();
+        //    User user = queryUser();
+        //    User u = new User
+        //    {
+        //        C_id = CreateAutoCode(user != null ? user.C_id : null),
+        //        username = nv.username,
+        //        password = nv.password,
+        //        dateOfBirth = 0,
+        //        address = nv.address,
+        //        contractId = nv.contractId,
+        //        titleId = nv.titleId,
+        //        departmentId = nv.departmentId,
+        //        email = nv.email,
+        //        mobile = nv.mobile,
+        //        gender = nv.gender,
+        //        dayOff = 12,
+        //        fullName = nv.fullName,
+        //        isActive= true,
+        //    };
+        //    db.Users.Add(u);
+        //    db.SaveChanges();
+        //    var contract_query = (from contract in db.ContractTypes
+        //                          select new
+        //                          {
+        //                              C_id = contract.C_id,
+        //                              code = contract.code,
+        //                              name = contract.name,
+        //                              dayOff = contract.dayOff
+        //                          });
+        //    var contracts = contract_query.ToList().Select(c => new ContractType
+        //    {
+        //        C_id = c.C_id,
+        //        code = c.code,
+        //        name = c.name,
+        //        dayOff = c.dayOff
+        //    }).ToList();
+        //    ViewData["contracts"] = contracts;
+        //    return View();
+        //}
+
+        //[AllowAnonymous]
+        //[HttpPost]
+        //public ActionResult Register()
+        //{
+        //    NghiphepEntities db = new NghiphepEntities();
+        //    User user = queryUser();
+        //    var contract_query = (from contract in db.ContractTypes
+        //                          select new
+        //                          {
+        //                              C_id = contract.C_id,
+        //                              code = contract.code,
+        //                              name = contract.name,
+        //                              dayOff = contract.dayOff
+        //                          });
+        //    var contracts = contract_query.ToList().Select(c => new ContractType
+        //    {
+        //        C_id = c.C_id,
+        //        code = c.code,
+        //        name = c.name,
+        //        dayOff = c.dayOff
+        //    }).ToList();
+        //    ViewData["contracts"] = contracts;
+        //    return View();
+        //}
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult RegisterUser(NHANVIEN nv)
+        {
+            NghiphepEntities db = new NghiphepEntities();
+            User user = queryUser();
+            User u = new User
+            {
+                C_id = CreateAutoCode(user != null ? user.C_id : null),
+                username = nv.username,
+                password = nv.password,
+                dateOfBirth = 0,
+                address = nv.address,
+                contractId = nv.contractId,
+                titleId = nv.titleId,
+                departmentId = nv.departmentId,
+                email = nv.email,
+                mobile = nv.mobile,
+                gender = nv.gender,
+                dayOff = 12,
+                fullName = nv.fullName,
+                isActive = true,
+            };
+            db.Users.Add(u);
+            db.SaveChanges();
+            return RedirectToAction("Login", "Account");
         }
 
         //    //

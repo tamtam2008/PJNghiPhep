@@ -268,6 +268,6 @@ C:\Users\sangh\PJNghiPhep\ProjectNghiPhep\bin\ko\System.Spatial.resources.dll
 C:\Users\sangh\PJNghiPhep\ProjectNghiPhep\bin\ru\System.Spatial.resources.dll
 C:\Users\sangh\PJNghiPhep\ProjectNghiPhep\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\sangh\PJNghiPhep\ProjectNghiPhep\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\sangh\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csprojResolveAssemblyReference.cache
 C:\Users\sangh\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.dll
 C:\Users\sangh\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.pdb
+C:\Users\sangh\PJNghiPhep\ProjectNghiPhep\obj\Debug\ProjectNghiPhep.csprojResolveAssemblyReference.cache

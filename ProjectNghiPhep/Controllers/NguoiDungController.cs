@@ -72,7 +72,21 @@ namespace ProjectNghiPhep.Controllers
                 name = c.name,
                 dayOff = c.dayOff
             }).ToList();
-            ViewData["contracts"] = contracts; 
+            var department_query = (from department in db.Departments
+                                  select new
+                                  {
+                                      C_id = department.C_id,
+                                      code = department.code,
+                                      name = department.name
+                                  });
+            var departments = department_query.ToList().Select(c => new Department
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name
+            }).ToList();
+            ViewData["contracts"] = contracts;
+            ViewData["departments"] = departments; 
             return View(user_result);
         }
 
@@ -127,7 +141,35 @@ namespace ProjectNghiPhep.Controllers
                 name = c.name,
                 dayOff = c.dayOff
             }).ToList();
+            var department_query = (from department in db.Departments
+                                    select new
+                                    {
+                                        C_id = department.C_id,
+                                        code = department.code,
+                                        name = department.name
+                                    });
+            var departments = department_query.ToList().Select(c => new Department
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name
+            }).ToList();
+            var titles_query = (from contract in db.Titles
+                                select new
+                                {
+                                    C_id = contract.C_id,
+                                    code = contract.code,
+                                    name = contract.name
+                                });
+            var titles = titles_query.ToList().Select(c => new Title
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name,
+            }).ToList();
             ViewData["contracts"] = contracts;
+            ViewData["departments"] = departments;
+            ViewData["titles"] = titles;
             return View(user_result);
         }
 
@@ -153,6 +195,9 @@ namespace ProjectNghiPhep.Controllers
                 result.fullName = user.fullName;
                 result.email = user.email;
                 result.mobile = user.mobile;
+                result.departmentId = user.departmentId;
+                result.titleId = user.titleId;
+                result.contractId = user.contractId;
                 //result.contractId = user.contractId;
                 result.dayOff = user.dayOff;
                 db.SaveChanges();
@@ -163,67 +208,116 @@ namespace ProjectNghiPhep.Controllers
         //Gọi form thêm người dùng
         public ActionResult CreateUser()
         {
+            NghiphepEntities db = new NghiphepEntities();
+            var contract_query = (from contract in db.ContractTypes
+                                  select new
+                                  {
+                                      C_id = contract.C_id,
+                                      code = contract.code,
+                                      name = contract.name,
+                                      dayOff = contract.dayOff
+                                  });
+            var contracts = contract_query.ToList().Select(c => new ContractType
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name,
+                dayOff = c.dayOff
+            }).ToList();
+            var department_query = (from department in db.Departments
+                                    select new
+                                    {
+                                        C_id = department.C_id,
+                                        code = department.code,
+                                        name = department.name
+                                    });
+            var departments = department_query.ToList().Select(c => new Department
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name
+            }).ToList();
+            var titles_query = (from contract in db.Titles
+                                select new
+                                {
+                                    C_id = contract.C_id,
+                                    code = contract.code,
+                                    name = contract.name
+                                });
+            var titles = titles_query.ToList().Select(c => new Title
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name,
+            }).ToList();
+            ViewData["contracts"] = contracts;
+            ViewData["departments"] = departments;
+            ViewData["titles"] = titles;
             return View();
         }
+        private string CreateAutoCode(string currentCode)
+        {
+            if (currentCode != null)
+            {
+                string resultString = "";
+                string numberString = currentCode.Split('_')[1];
+                int number = Int32.Parse(numberString) + 1;
+                resultString = number.ToString();
+                while (resultString.Length < 6)
+                {
+                    resultString = "0" + resultString;
+                }
+                return "USER_" + resultString;
+            }
+            else
+            {
+                return "USER_000001";
+            }
+        }
+
+        private User queryUser()
+        {
+            NghiphepEntities db = new NghiphepEntities();
+            var query = (from user in db.Users
+                         select new
+                         {
+                             C_id = user.C_id,
+                         }).OrderBy(x => x.C_id);
+            var users = query.ToList().Select(r => new User
+            {
+                C_id = r.C_id
+            }).ToList();
+            users.Reverse();
+            return users.Count > 0 ? users[0] : null;
+        }
+
         //Tạo người dùng từ thông tin đc post lên
         //Nhớ thêm email đúng để nhận đc mail
         [HttpPost]
-        public ActionResult CreateUser(UserViewModel user)
+        public ActionResult CreateUserForm(NHANVIEN nv)
         {
-            //Validate dữ liệu, nếu chưa đúng thì nhập lại
-            if (!ModelState.IsValid)
+            NghiphepEntities db = new NghiphepEntities();
+            User user = queryUser();
+            User u = new User
             {
-                return View(user);
-            }
-            using (NghiphepEntities db = new NghiphepEntities())
-            {
-                //Nếu id đã tồn tại thì báo lỗi id đã tồn tại
-                var use = db.Users.FirstOrDefault(x => x.C_id == user.C_id);
-                if (use != null)
-                {
-                    ModelState.AddModelError("", "ID đã tồn tại");
-                    return View(user);
-                }
-                var use1 = db.Users.FirstOrDefault(x => x.username == user.username);
-                if (use1 != null)
-                {
-                    //Nếu username đã tồn tại thì báo lỗi username đã tồn tại
-                    ModelState.AddModelError("", "Tên đăng nhập đã tồn tại");
-                    return View(user);
-                }
-                //Tạo model user từ thông tin đã nhập để them vào database
-                var newUser = new User
-                {
-                    C_id = user.C_id,
-                    username = user.username,
-                    address = user.address,
-                    contractId = user.contractId,
-                    email = user.email,
-                    gender = user.gender,
-                    fullName = user.fullName,
-                    isActive = true,
-                    dayOff = user.dayOff,
-                    password = user.password,
-                    mobile = user.mobile,
-                    titleId = user.titleId,
-                    departmentId = user.departmentId,
-                    dateOfBirth = user.dateOfBirth,
-
-                };
-                try
-                {
-                    db.Users.Add(newUser);
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    //Lưu thất bại báo lỗi (khi không kết nối đc database)
-                    ModelState.AddModelError("", "Lỗi hệ thống");
-                    return View(user);
-                }
-                //Lưu thành công thì chuyển đến tran index
-                return RedirectToAction("Index");
-            }
+                C_id = CreateAutoCode(user != null ? user.C_id : null),
+                username = nv.username,
+                password = nv.password,
+                dateOfBirth = 0,
+                address = nv.address,
+                contractId = nv.contractId,
+                titleId = nv.titleId,
+                departmentId = nv.departmentId,
+                email = nv.email,
+                mobile = nv.mobile,
+                gender = nv.gender,
+                dayOff = 12,
+                fullName = nv.fullName,
+                isActive = true,
+            };
+            db.Users.Add(u);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
 
