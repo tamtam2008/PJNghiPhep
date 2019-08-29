@@ -122,10 +122,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2019 14:28:53</publishTime>
     </File>
     <File Include="bin/ProjectNghiPhep.dll">
-      <publishTime>08/30/2019 00:16:50</publishTime>
+      <publishTime>08/30/2019 02:55:04</publishTime>
     </File>
     <File Include="bin/ProjectNghiPhep.pdb">
-      <publishTime>08/30/2019 00:16:50</publishTime>
+      <publishTime>08/30/2019 02:55:03</publishTime>
     </File>
     <File Include="bin/ru/Microsoft.Data.Edm.resources.dll">
       <publishTime>08/25/2019 14:28:52</publishTime>
@@ -647,7 +647,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/25/2019 17:47:18</publishTime>
     </File>
     <File Include="Views/DonNghiPhep/Employee.cshtml">
-      <publishTime>08/30/2019 00:21:46</publishTime>
+      <publishTime>08/30/2019 00:39:31</publishTime>
     </File>
     <File Include="Views/DonNghiPhep/Manager.cshtml">
       <publishTime>08/29/2019 23:52:59</publishTime>
@@ -668,13 +668,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/29/2019 23:21:41</publishTime>
     </File>
     <File Include="Views/NguoiDung/Edit.cshtml">
-      <publishTime>08/26/2019 23:03:39</publishTime>
+      <publishTime>08/30/2019 02:49:15</publishTime>
     </File>
     <File Include="Views/NguoiDung/Index.cshtml">
       <publishTime>08/25/2019 14:28:50</publishTime>
     </File>
     <File Include="Views/NguoiDung/Profile.cshtml">
-      <publishTime>08/29/2019 22:59:22</publishTime>
+      <publishTime>08/30/2019 02:53:21</publishTime>
     </File>
     <File Include="Views/PhanQuyens/ShowDataBasePhanQuyen.cshtml">
       <publishTime>08/25/2019 14:28:50</publishTime>

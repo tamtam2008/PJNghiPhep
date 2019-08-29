@@ -894,11 +894,11 @@ namespace ProjectNghiPhep
                          .WithHtmlEncoding(false)
                          .WithValueExpression((p, c) => c.UrlHelper.Action("Edit", "NguoiDung", new { id = p.C_id }))
                          .WithValueTemplate("<a href='{Value}' class='btn btn-primary' role='button' data-form-method='post'>Sửa</a>");
-                    cols.Add("CancelBtn").WithSorting(false)
-                         .WithHeaderText("")
-                         .WithHtmlEncoding(false)
-                         .WithValueExpression((p, c) => c.UrlHelper.Action("DeleteUser", "NguoiDung", new { id = p.C_id }))
-                         .WithValueTemplate("<a href='{Value}' class='btn btn-danger'>Xóa</a>");
+                    //cols.Add("CancelBtn").WithSorting(false)
+                    //     .WithHeaderText("")
+                    //     .WithHtmlEncoding(false)
+                    //     .WithValueExpression((p, c) => c.UrlHelper.Action("DeleteUser", "NguoiDung", new { id = p.C_id }))
+                    //     .WithValueTemplate("<a href='{Value}' class='btn btn-danger'>Xóa</a>");
                 })
                 .WithRetrieveDataMethod((context) =>
                 {

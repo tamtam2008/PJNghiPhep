@@ -1,11 +1,20 @@
 ﻿@model ProjectNghiPhep.Models.User
 @{
-    ViewBag.Title = "CreateNew";
+    ViewBag.Title = "Update";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using (Html.BeginForm("SaveUser", "NguoiDung", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
+    @*<script>
+        $(document).ready(function ready() {
+            setTimeout(function () {
+                $("#contracts").val(@Model.contractId)
+                $("#titles").val(@Model.titleId)
+                $("#departments").val(@Model.departmentId)
+            }, 500)
+        })
+    </script>*@
     <div class="form-horizontal">
         <h4>Cập nhật thông tin</h4>
         <hr />
@@ -23,7 +32,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.fullName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.fullName, new { htmlAttributes = new { @class = "form-control" }, @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.fullName, new { htmlAttributes = new { @class = "form-control" } })
                 <br />
                 @Html.ValidationMessageFor(model => model.fullName, "", new { @class = "text-danger" })
             </div>
@@ -32,7 +41,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.email, new { htmlAttributes = new { @class = "form-control" }, @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
                 <br />
                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
             </div>
@@ -41,7 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.mobile, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.mobile, new { htmlAttributes = new { @class = "form-control" }, @readonly = "readonly" })
+                @Html.TextBoxFor(model => model.mobile, new { htmlAttributes = new { @class = "form-control" } })
                 <br />
                 @Html.ValidationMessageFor(model => model.mobile, "", new { @class = "text-danger" })
             </div>
@@ -49,38 +58,34 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.contractId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10" style="height: 27px;">
-                <select class="form-control" name="test" style="width: 300px;">
-                    @foreach (var item in ViewBag.contracts)
-                    {
-                        <option value="@item.C_id">@item.name</option>
-                    }
-                </select>
-                <br />
+            <div class="col-md-9">
+                @Html.DropDownListFor(model => model.contractId, new SelectList(ViewBag.contracts, "C_id", "name", @Model.contractId), htmlAttributes: new { @class = "form-control", @id="contracts" })
                 @Html.ValidationMessageFor(model => model.contractId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.contractId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10" style="height: 27px;">
-                <select class="form-control" name="test" style="width: 300px;">
-                    @foreach (var item in ViewBag.departments)
-                    {
-                        <option value="@item.C_id">@item.name</option>
-                    }
-                </select>
-                <br />
-                @Html.ValidationMessageFor(model => model.contractId, "", new { @class = "text-danger" })
+            @Html.LabelFor(model => model.titleId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(model => model.titleId, new SelectList(ViewBag.titles, "C_id", "name", @Model.titleId), htmlAttributes: new { @class = "form-control", @id = "titles" })
+                @Html.ValidationMessageFor(model => model.titleId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.departmentId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(model => model.departmentId, new SelectList(ViewBag.departments, "C_id", "name", @Model.departmentId), htmlAttributes: new { @class = "form-control", @id = "departments" })
+                @Html.ValidationMessageFor(model => model.departmentId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.dayOff, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.dayOff, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.dayOff, new { htmlAttributes = new { @class = "form-control" }, type = "number" })
                 <br />
-                @Html.ValidationMessageFor(model => model.dayOff, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(m => m.dayOff, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -90,7 +95,4 @@
             </div>
         </div>
     </div>
-    
-    
-    
 }

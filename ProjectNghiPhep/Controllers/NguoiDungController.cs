@@ -35,6 +35,8 @@ namespace ProjectNghiPhep.Controllers
                          select new
                          {
                              C_id = user.C_id,
+                             departmentId = user.departmentId,
+                             titleId = user.titleId,
                              username = user.username,
                              dayOff = user.dayOff,
                              contractId = user.contractId,
@@ -51,7 +53,9 @@ namespace ProjectNghiPhep.Controllers
                 fullName = r.fullName,
                 dayOff = r.dayOff,
                 createdAt = r.createdAt,
-                contractId = r.ContractType.name,
+                contractId = r.ContractType.C_id,
+                departmentId = r.departmentId,
+                titleId = r.titleId,
                 ContractType = r.ContractType,
                 email = r.email,
                 mobile = r.mobile
@@ -85,8 +89,22 @@ namespace ProjectNghiPhep.Controllers
                 code = c.code,
                 name = c.name
             }).ToList();
+            var titles_query = (from contract in db.Titles
+                                select new
+                                {
+                                    C_id = contract.C_id,
+                                    code = contract.code,
+                                    name = contract.name
+                                });
+            var titles = titles_query.ToList().Select(c => new Title
+            {
+                C_id = c.C_id,
+                code = c.code,
+                name = c.name,
+            }).ToList();
             ViewData["contracts"] = contracts;
-            ViewData["departments"] = departments; 
+            ViewData["departments"] = departments;
+            ViewData["titles"] = titles;
             return View(user_result);
         }
 
@@ -107,6 +125,8 @@ namespace ProjectNghiPhep.Controllers
                              username = user.username,
                              dayOff = user.dayOff,
                              contractId = user.contractId,
+                             departmentId = user.departmentId,
+                             titleId = user.titleId,
                              createdAt = user.createdAt,
                              ContractType = contract,
                              fullName = user.fullName,
@@ -120,7 +140,9 @@ namespace ProjectNghiPhep.Controllers
                 fullName = r.fullName,
                 dayOff = r.dayOff,
                 createdAt = r.createdAt,
-                contractId = r.ContractType.name,
+                contractId = r.contractId,
+                departmentId = r.departmentId,
+                titleId = r.titleId,
                 ContractType = r.ContractType,
                 email = r.email,
                 mobile = r.mobile
