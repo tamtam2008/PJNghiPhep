@@ -23,12 +23,11 @@ namespace ProjectNghiPhep.Controllers
                 {
                     return RedirectToAction("Login", "Account");
                 }
-                var documents = db.Documents.Where(d => d.createdById == user.C_id);
+                var documents = db.Documents.Where(d => d.createdById == user.C_id && d.status == 99);
                 int dateOff = 0;
-                //if (documents != null)
-                //{
-                //    dateOff = (int)documents.Sum(d => (int)((d.endDate - d.startDate) / 1000 / 3600 / 24));
-                //}
+                foreach (Document d in documents) {
+                    dateOff += (int)((d.endDate - d.startDate) / 1000 / 3600 / 24);
+                }
                 var result = from u in db.Users
                              join d in db.Documents
                              on u.C_id equals d.createdById
@@ -70,19 +69,29 @@ namespace ProjectNghiPhep.Controllers
                 {
                     var r = new DashboardViewModel
                     {
-                        DocumentId = item.DocumentId,
+                        DocumentId = "Đơn " + item.DocumentId,
                         CreateBy = item.CreateBy,
                         StartDate = item.StartDate.HasValue ? convertDoubleToDatetime(item.StartDate.Value) : "",
                         EndDate = item.StartDate.HasValue ? convertDoubleToDatetime(item.EndDate.Value) : "",
                         Reason = item.Reason,
                         Status = item.Status == 0 ? "đã được nộp" : item.Status == 99 ? "đã được duyệt" : "Đã bị hủy",
                         ApproveOrRejectBy = item.ApproveOrRejectBy,
-                        ApproveOrRejectDate = item.ApproveOrRejectDate.HasValue ? convertDoubleToDatetime(item.ApproveOrRejectDate.Value) : "",
+                        ApproveOrRejectDate = item.ApproveOrRejectDate.HasValue ? "Vào lúc " + convertDoubleToDatetime(item.ApproveOrRejectDate.Value) : "",
                         usedDayOff = item.usedDayOff,
-                        totalDayOff = (int)item.totalDayOff,
-                        DayOff = (int)(item.totalDayOff - item.usedDayOff)
+                        totalDayOff = (int)(item.totalDayOff + item.usedDayOff),
+                        DayOff = (int)(item.totalDayOff)
                     };
                     listData.Add(r);
+                }
+                if (listData.Count == 0)
+                {
+                    listData.Add(new DashboardViewModel
+                    {
+                        DocumentId = "Không có lịch sử",
+                        usedDayOff = 0,
+                        totalDayOff = (int)user.dayOff,
+                        DayOff = (int)user.dayOff
+                    });
                 }
                 return View(listData);
             }

@@ -6,12 +6,12 @@
 </div>
 <div class="panel panel-default">
     <div class="panel-body">
-        <div class="col-md-3">
+        <div class="col-md-3" style="padding-top: 50px;">
             <table class="table table-bordered" style="height: 100%">
                 <thead>
                     <tr>
                         <th>
-                            <h2>
+                            <h2 style="text-align: center;">
                                 Tổng số ngày nghỉ
                             </h2>
                         </th>
@@ -28,12 +28,12 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3" style="padding-top: 50px;">
             <table class="table table-bordered" style="height: 100%">
                 <thead>
                     <tr>
                         <th>
-                            <h2>
+                            <h2 style="text-align: center;">
                                 Đã sử dụng
                             </h2>
                         </th>
@@ -50,12 +50,12 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-md-3">
-            <table class="table table-bordered" style="height: 100%">
+        <div class="col-md-3" style="padding-top: 50px;">
+            <table class="table table-bordered" style="height: 100%;">
                 <thead>
                     <tr>
                         <td>
-                            <h2>
+                            <h2 style="text-align: center;">
                                 Ngày nghỉ còn lại
                             </h2>
                         </td>
@@ -77,17 +77,17 @@
                 <thead>
                     <tr>
                         <th>
-                            <h2>
+                            <h2 style="text-align: center;">
                                 Lịch sử
                             </h2>
                         </th>
                     </tr>
                 </thead>
-                <tbody style="height: 200px; overflow-y: auto; display: block;">
+                <tbody style="height: calc(100vh - 300px); overflow-y: auto; display: block;">
                     @foreach (var item in Model)
                     {
                         <tr style="max-height: 30px;">
-                            <td>Đơn &nbsp; @item.DocumentId &nbsp; @item.Status &nbsp; Vào lúc &nbsp; @item.ApproveOrRejectDate </td>
+                            <td>@item.DocumentId &nbsp; @item.Status &nbsp; @item.ApproveOrRejectDate </td>
                         </tr>
                     }
                 </tbody>
